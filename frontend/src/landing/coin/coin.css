@@ -1,0 +1,57 @@
+:root {
+  /* --coin-color-1: #714dff; */
+  /* --coin-color-2: #e151ff; */
+  --coin-color-1: #ffffff;
+  --coin-color-2: #0c4c75;
+  --coin-color-3: #181831;
+  --coin-color-4: #211937;
+  --coin-color-5: #2f1534;
+  --coin-color-5: #10192a;
+}
+
+.progress-coin-color-2::-webkit-progress-value {
+  background: var(--coin-color-2);
+}
+
+.coin-title {
+  @apply text-4xl uppercase mb-6 text-center;
+}
+
+.coin-title-sup {
+  @apply text-xl uppercase text-center pc:max-w-[650px] mx-auto;
+}
+
+.coin-box {
+  @apply bg-base-100 text-base-content p-4 rounded-box;
+}
+
+.svg-shadow {
+  filter: drop-shadow(0 0 10px gold);
+}
+
+.coin-counter {
+  unicode-bidi: isolate;
+  font-family: Roboto;
+}
+
+/* .animate-rotate {
+  transform-origin: center center;
+  will-change: transform;
+  animation: rotate 10s cubic-bezier(0, 0, 1, 1) infinite;
+} */
+
+/* @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+.coinBlock {
+  --x: 0;
+  --y: 0;
+  transition: transform 0.2s ease;
+  transform: rotateX(var(--x)) rotateY(var(--y));
+}

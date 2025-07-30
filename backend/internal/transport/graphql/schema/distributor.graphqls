@@ -1,0 +1,8 @@
+type DistRes {
+    url: String!
+    uid: String!
+}
+
+extend type Mutation {
+    dist: DistRes! @hasAuth
+}

@@ -1,0 +1,17 @@
+type Plan {
+    code: String!
+    period: Int!
+    price: Int!
+    retail_price: Int!
+    cv: Int!
+    currency_code: String!
+    rank_code: String!
+    rank_period: Int!
+    priority: Int!
+    bot_count: Int!
+    max_deposit: Int!
+}
+
+extend type Query {
+    plans: [Plan!]! @hasAuth
+}

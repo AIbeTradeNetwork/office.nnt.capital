@@ -1,0 +1,22 @@
+# GraphQL schema
+directive @hasAuth on FIELD_DEFINITION
+
+type Query
+
+type Mutation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

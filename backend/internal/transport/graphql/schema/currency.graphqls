@@ -1,0 +1,8 @@
+type Currency {
+    code: String!
+    precision: Int!
+}
+
+extend type Query {
+    currencies: [Currency!]! @hasAuth
+}

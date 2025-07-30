@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .safearea-t {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safearea-b {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safearea-l {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safearea-r {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .safearea-x {
+    @apply safearea-l safearea-r;
+  }
+
+  .safearea-y {
+    @apply safearea-t safearea-b;
+  }
+
+  .safearea-full {
+    @apply safearea-t safearea-b safearea-l safearea-r;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .height-full {
+    min-height: calc(100lvh - 56px);
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  img {
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  html {
+    width: 100%;
+    overflow-y: visible !important;
+    background-color: var(--fallback-b1, var(--b1));
+    color: var(--fallback-bc, var(--bc));
+    @apply overscroll-none min-h-lvh mobile:no-scrollbar;
+  }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    background: rgba(0,0,0,1);
+    @apply overscroll-none safearea-l safearea-r safearea-b min-h-lvh mobile:no-scrollbar;
+  }
+
+  [data-theme="light"] body {
+    background: rgba(0,0,0,0.2)
+  }
+
+  [data-theme="dark"] body {
+    background: rgba(0,0,0,1);
+  }
+
+  #app {
+    width: 100%;
+  }
+
+  /* a.route-exact-active-link,
+  a.route-exact-active-link:hover,
+  a.route-exact-active-link:active,
+  a.route-exact-active-link:focus {
+    @apply bg-neutral text-neutral-content;
+  } */
+}
+
+@layer components {
+}

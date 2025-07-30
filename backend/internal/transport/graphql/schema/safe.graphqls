@@ -1,0 +1,26 @@
+enum UserSafeVariantType {
+    abt
+    usd
+}
+
+type UserSafeVariant {
+    type: UserSafeVariantType!
+    amount: Int!
+}
+
+type UserSafe {
+    uid: String!
+    safe_uid: String!
+    secret: String!
+    created_at: Int!
+    claimed_at: Int!
+    variant: UserSafeVariant
+}
+
+extend type Query {
+    user_safe: UserSafe! @hasAuth
+}
+
+extend type Mutation {
+    hack_safe(code: String!): UserSafe! @hasAuth
+}

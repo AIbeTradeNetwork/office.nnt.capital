@@ -1,0 +1,127 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+"The @defer directive may be specified on a fragment spread to imply de-prioritization, that causes the fragment to be omitted in the initial response, and delivered as a subsequent response afterward. A query with @defer directive will cause the request to potentially return multiple responses, where non-deferred data is delivered in the initial response and data deferred delivered in a subsequent response. @include and @skip take precedence over @defer."
+directive @defer(if: Boolean = true, label: String) on FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+directive @isAdmin on FIELD_DEFINITION
+
+directive @isAuthenticated on FIELD_DEFINITION
+
+type CustomField {
+    name: String!
+    value: String!
+}
+
+type Customer {
+    account: String!
+    email: String!
+    phone: String!
+}
+
+type Mutation {
+    fake_common(in: String): Boolean
+    fake_public(in: String): Boolean
+    order_cancel(id: UUID!): Boolean!
+    order_create(order: OrderCreateIn!): OrderCreate!
+}
+
+type Order {
+    amount: Float!
+    amountPaid: Float
+    billId: UUID!
+    changedDateTime: Date!
+    comment: String!
+    creationDateTime: Date!
+    currency: Currency!
+    customFields: [CustomField!]!
+    customer: Customer!
+    expirationDateTime: Date!
+    merchantId: UUID!
+    payUrl: String!
+    paymentSystemID: UUID!
+    status: OrderStatus!
+}
+
+type OrderCreate {
+    billId: UUID!
+    url: String
+}
+
+type PaymentSystem {
+    active: Boolean!
+    id: UUID!
+    type: String!
+}
+
+type PaymentsSystemList {
+    items: [PaymentSystem!]!
+}
+
+type Query {
+    fake_common(in: String): Boolean
+    fake_public(in: String): Boolean
+    order_info(id: UUID!): Order!
+    paymentsSystem_list(p: PaymentsSystemListIn): PaymentsSystemList!
+}
+
+enum Currency {
+    USDT
+}
+
+enum OrderStatus {
+    CANCELED
+    EXPIRED
+    PAID
+    REJECTED
+    WAITING
+}
+
+scalar Date
+
+scalar Time
+
+scalar UUID
+
+input Callbacks {
+    failureURL: String
+    returnURL: String
+    successURL: String
+}
+
+input CustomFieldIn {
+    name: String!
+    value: String!
+}
+
+input CustomerIn {
+    account: String!
+    email: String!
+    phone: String!
+}
+
+input OrderCreateIn {
+    amount: Float!
+    callbacks: Callbacks
+    comment: String
+    currency: Currency!
+    "unsupported yet"
+    customFields: [CustomFieldIn!]
+    customer: CustomerIn!
+    "in null - time + 10 minutes. Format: RFC3339: 2006-01-02T15:04:05Z07:00"
+    expirationDateTime: Date
+    paymentSystemID: UUID!
+}
+
+input Pagination {
+    offset: Int!
+    size: Int!
+}
+
+input PaymentsSystemListIn {
+    pagination: Pagination
+}

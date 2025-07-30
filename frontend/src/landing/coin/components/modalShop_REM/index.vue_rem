@@ -1,0 +1,165 @@
+<script lang="ts">
+  export default {
+    name: 'ModalSubscriptions',
+  }
+</script>
+
+<script setup lang="ts">
+  import Modal from 'components/modals/modal/index.vue'
+  import { $t } from 'i18n/index'
+  import { $modals } from 'utils/modals'
+  import { computed, onMounted, ref } from 'vue'
+  import { $store } from 'utils/store'
+  import { $formatInt, $formatPriceByLocale } from 'utils/formats'
+  import { ECurrencies } from 'types/enums'
+  import { $formatDay } from 'utils/date'
+  import Dropdown from 'components/dropdown/index.vue'
+  import { $textSplit } from 'utils/text'
+
+  const loading = ref(true)
+  const selectedABT = ref(false)
+  const products = computed(() => $store.get('products'))
+
+  const premiumText = computed(() => {
+    return function (product: Product) {
+      return $textSplit($t('products.text.premium.text', { multiplier: product.multiplier }))
+    }
+  })
+
+  const filteredProducts = computed(() => {
+    return products.value.filter((product) => {
+      if (selectedABT.value && product.currency_code === ECurrencies.abt) return true
+      if (!selectedABT.value && product.currency_code === ECurrencies.usdHidden) return true
+      return null
+    })
+  })
+
+  function buy(product: Product) {
+    $modals.paySystem.show({
+      type: 'product',
+      what: $t(`coin.products.${product.code}`) + ' ' + $t(`products.category.${product.category}`),
+      code: product.code,
+      currency_code: selectedABT.value ? ECurrencies.abt : ECurrencies.usdHidden,
+    })
+  }
+
+  async function init() {
+    loading.value = true
+    await $store.updateProducts()
+    loading.value = false
+  }
+
+  onMounted(() => {
+    init()
+  })
+</script>
+
+<template>
+  <Modal :modal="$modals.coinShop" width="full" :z="50" :title="$t('Boosts')">
+    <div v-if="loading" class="text-center font-bold my-10 text-info">
+      {{ $t('Loading') }}
+    </div>
+
+    <div v-else>
+      <div class="form-control mb-8">
+        <label class="cursor-pointer label inline-flex self-center">
+          <span
+            class="label-text font-bold text-lg mr-2"
+            :class="`${!selectedABT ? 'text-gold' : ''}`"
+          >
+            {{ ECurrencies.usd.toUpperCase() }}
+          </span>
+          <input v-model="selectedABT" type="checkbox" class="toggle toggle-lg toggle-primary" />
+          <span
+            class="label-text font-bold text-lg ml-2"
+            :class="`${selectedABT ? 'text-gold' : ''}`"
+          >
+            {{ ECurrencies.abt.toUpperCase() }}
+          </span>
+        </label>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          v-for="product in filteredProducts"
+          :key="product.code"
+          class="box flex flex-col w-full items-center bg-base-200 relative gap-2"
+        >
+          <div
+            v-if="product.price < product.retail_price"
+            class="badge badge-error absolute top-0 left-2/4 -translate-x-2/4 -translate-y-2/4 whitespace-nowrap line-through"
+          >
+            {{
+              $formatPriceByLocale({
+                count: $formatInt(product.retail_price, {
+                  precision: product.precision,
+                }),
+                currency: product.currency_code,
+              })
+            }}
+          </div>
+
+          <div class="font-bold uppercase">
+            {{ $t(`products.category.${product.category}`) }}
+          </div>
+
+          <div class="text-xl font-bold text-gradient">
+            {{ $formatDay(product.period) }} {{ $t('Days', $formatDay(product.period)) }}
+            <!-- {{ $t(`coin.products.${product.code}`) }} -->
+          </div>
+
+          <div class="text-xl font-bold text-gold">
+            {{
+              $formatPriceByLocale({
+                count: $formatInt(product.price, {
+                  precision: product.precision,
+                }),
+                currency: product.currency_code,
+              })
+            }}
+          </div>
+
+          <div class="flex items-center gap-2 mt-2">
+            <button class="btn btn-sm btn-primary" @click="buy(product)">
+              {{ $t('Buy') }}
+            </button>
+
+            <Dropdown>
+              <template #trigger>
+                <button class="btn btn-outline btn-square btn-sm">?</button>
+              </template>
+              <template #drop>
+                <div class="p-4">
+                  <ul class="mx-auto space-y-2" role="">
+                    <li v-for="t in premiumText(product)" :key="t" class="flex text-sm">
+                      <svg
+                        width="800px"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                        class="size-6 mr-2 text-blue-300 flex-[0_0_30px]"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M510.228,166.833L412.915,42.98c-1.573-2-3.978-3.169-6.522-3.169H105.606c-2.545,0-4.95,1.169-6.521,3.169L1.772,166.833
+                          c-2.435,3.1-2.352,7.485,0.198,10.49l247.706,291.94c1.576,1.858,3.888,2.927,6.324,2.927c2.436,0,4.748-1.07,6.324-2.927
+                          l247.706-291.94C512.58,174.318,512.663,169.932,510.228,166.833z M394.573,56.398l-35.771,98.898l-84.771-98.898H394.573z
+                          M344.127,163.664H167.872l88.127-102.815L344.127,163.664z M237.968,56.398l-84.77,98.898l-35.773-98.898H237.968z
+                          M102.891,64.984l35.694,98.68H25.357L102.891,64.984z M26.207,180.251h118.377l87.96,243.183L26.207,180.251z M255.999,439.514
+                          l-93.776-259.263h187.551L255.999,439.514z M279.455,423.433l87.959-243.182h118.377L279.455,423.433z M373.413,163.664
+                          l35.693-98.681l77.535,98.681H373.413z"
+                        />
+                      </svg>
+                      {{ t }}
+                    </li>
+                  </ul>
+                </div>
+              </template>
+            </Dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Modal>
+</template>

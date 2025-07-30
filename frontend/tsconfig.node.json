@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+    // "allowImportingTsExtensions": true,
+  },
+  "include": ["vite.config.ts", "obfuscator.ts"]
+}

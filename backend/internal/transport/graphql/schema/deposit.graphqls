@@ -1,0 +1,7 @@
+extend type Mutation {
+    check_deposit(uid: String!, lt: String!): String!
+}
+
+extend type Query {
+  depositTotal(userUid: String!): Int!
+}

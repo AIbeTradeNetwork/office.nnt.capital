@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: <IMAGE>
+          ports:
+            - containerPort: 8080
+            - containerPort: 2345
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
+          env:
+            - name: LOG_LEVEL
+              value: "error"
+            - name: MONGODB_URL
+              value: "$MONGODB_URL"
+            - name: MONGODB_DATABASE
+              value: "aibetrade"
+            - name: TEMPORAL_URL
+              value: "temporal-frontend.default.svc:7233"
+            - name: HTTP_ADDR
+              value: ":8080"
+            - name: JWT_SECRET
+              value: "$JWT_SECRET"
+            - name: API_ROLE
+              value: "enabled"
+            - name: WORKER_ROLE
+              value: "disabled"
+            - name: NOTIFIER_ROLE
+              value: "disabled"
+            - name: TON_LISTENER_ROLE
+              value: "disabled"
+            - name: TON_WORKER_ROLE
+              value: "disabled"
+            - name: PRODUCT_ROLE
+              value: "disabled"
+            - name: AUTOFARM_ROLE
+              value: "disabled"
+            - name: TG_BOT_API_KEY
+              value: "$TG_BOT_API_KEY"
+            - name: CG_BOT_API_KEY
+              value: "$CG_BOT_API_KEY"
+            - name: TON_NETWORK
+              value: "mainnet"
+            - name: TON_WALLET
+              value: "UQATHp_e7bkvfuLDARXcb8caLBy91NPZ_COjbp4nt0UtqkdG"
+
+            - name: PAYMENT_GATEWAY_URL
+              value: "https://pay.aibetrade.com/graphql"
+            - name: PAYMENT_GATEWAY_PAYMENT_SYSTEM_ID
+              value: "eabf1c97-3c27-47a9-b56c-55edfbe84a22"
+            - name: PAYMENT_GATEWAY_LOGIN
+              valueFrom:
+                secretKeyRef:
+                  name: paymentgateway
+                  key: PAYMENT_GATEWAY_LOGIN
+            - name: PAYMENT_GATEWAY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: paymentgateway
+                  key: PAYMENT_GATEWAY_KEY

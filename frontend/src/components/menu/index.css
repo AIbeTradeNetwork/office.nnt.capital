@@ -1,0 +1,23 @@
+.menu a > span {
+  pointer-events: none;
+}
+
+.menu-mobile-right {
+  display: none;
+}
+
+.drawer-toggle:not(:checked) ~ .drawer-side {
+  @apply mobile:hidden;
+}
+
+/* .drawer-toggle:checked ~ .drawer-side {
+  scrollbar-gutter: auto;
+} */
+
+.drawer-toggle:checked ~ .drawer-side > .menu-mobile-right {
+  display: flex;
+}
+
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}

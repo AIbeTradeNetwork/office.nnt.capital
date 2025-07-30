@@ -1,0 +1,18 @@
+import { $formatDate } from 'utils/date'
+import { $me } from 'utils/me'
+import { $getAllErrors } from 'utils/reportError'
+
+export default function downloadDebuggingFile() {
+  const obj = {
+    name: $me.data.nickname,
+    errors: $getAllErrors(),
+  }
+  const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(obj))
+  const link = document.createElement('A')
+  link.setAttribute('href', dataStr)
+  link.setAttribute(
+    'download',
+    `debuggingFile_${$me.data.nickname}_${$formatDate(new Date().getTime())}.json`,
+  )
+  link.click()
+}

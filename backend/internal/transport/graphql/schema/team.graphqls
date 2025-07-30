@@ -1,0 +1,45 @@
+enum TeamType {
+    auto
+    left
+    right
+}
+
+type TeamUser {
+    uid: String!
+    ref_uid: String!
+    email: String!
+    nickname: String!
+    created_at: Int!
+    role: UserRole!
+    plans: [UserPlan!]!
+    plan: UserPlan
+    ranks: [UserRank!]!
+    rank: UserRank
+    place: UserPlace
+    activity: UserActivity
+    team_count: Int!
+}
+
+type FriendUser {
+    uid: String!
+    ref_uid: String!
+    email: String!
+    nickname: String!
+    created_at: Int!
+    team_count: Int!
+}
+
+extend type Query {
+    team_ref(user_uid: String): [TeamUser!]! @hasAuth
+    team_bin(user_uid: String, rows: Int!): [TeamUser!]! @hasAuth
+    team_match(user_uid: String): [TeamUser!]! @hasAuth
+
+    friends_count(user_uid: String!): Int! @hasAuth
+    friends(user_uid: String!, limit: Int!, skip: Int!): [FriendUser!]! @hasAuth
+    partners_count(user_uid: String!): Int! @hasAuth
+}
+
+extend type Mutation {
+    add_partner(user_uid: String!, partner_uid: String!): Boolean! @hasAuth
+    remove_partner(user_uid: String!, partner_uid: String!): Boolean! @hasAuth
+}

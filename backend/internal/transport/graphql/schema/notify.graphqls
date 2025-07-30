@@ -1,0 +1,29 @@
+type Locale {
+    ru: String!
+    en: String!
+}
+
+input InLocale {
+    ru: String!
+    en: String!
+}
+
+type Notification {
+    uid: String!
+    to_user_uid: [String!]!
+    texts: Locale!
+    created_at: Int!
+}
+
+input Notify {
+    to_user_uid: [String!]!
+    texts: InLocale!
+}
+
+extend type Query {
+    notifications: [Notification!]! @hasAuth
+}
+
+extend type Mutation {
+    notify(input: Notify): Notification! @hasAuth
+}

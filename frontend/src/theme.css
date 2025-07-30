@@ -1,0 +1,128 @@
+*,
+:root {
+  --pc: rgb(9, 19, 7);
+  --sc: rgb(22, 5, 3);
+  --ac: rgb(14, 8, 19);
+  --inc: rgb(1, 19, 22);
+  --suc: rgb(3, 20, 13);
+  --wac: rgb(20, 16, 3);
+  --erc: rgb(22, 11, 9);
+  --p: rgb(159, 232, 141);
+  --s: rgb(255, 125, 92);
+  --a: rgb(199, 146, 233);
+  --n: rgb(28, 33, 43);
+  --nc: rgb(178, 204, 214);
+  --b1: rgb(42, 48, 60);
+  --b2: rgb(36, 41, 51);
+  --b3: rgb(32, 37, 46);
+  --bc: rgb(178, 204, 214);
+  --in: rgb(40, 235, 255);
+  --su: rgb(98, 239, 189);
+  --wa: rgb(239, 208, 87);
+  --er: rgb(255, 174, 155);
+  --rounded-box: 1rem;
+  --rounded-btn: .5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: .25s;
+  --animation-input: .2s;
+  --btn-focus-scale: .95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: .5rem;
+  --fallback-pc: rgb(9, 19, 7);
+  --fallback-sc: rgb(22, 5, 3);
+  --fallback-ac: rgb(14, 8, 19);
+  --fallback-inc: rgb(1, 19, 22);
+  --fallback-suc: rgb(3, 20, 13);
+  --fallback-wac: rgb(20, 16, 3);
+  --fallback-erc: rgb(22, 11, 9);
+  --fallback-p: rgb(159, 232, 141);
+  --fallback-s: rgb(255, 125, 92);
+  --fallback-a: rgb(199, 146, 233);
+  --fallback-n: rgb(28, 33, 43);
+  --fallback-nc: rgb(178, 204, 214);
+  --fallback-b1: rgb(42, 48, 60);
+  --fallback-b2: rgb(36, 41, 51);
+  --fallback-b3: rgb(32, 37, 46);
+  --fallback-bc: rgb(178, 204, 214);
+  --fallback-in: rgb(40, 235, 255);
+  --fallback-su: rgb(98, 239, 189);
+  --fallback-wa: rgb(239, 208, 87);
+  --fallback-er: rgb(255, 174, 155);
+  --btn-color: rgb(36, 41, 51);
+
+  --tw-shadow-color: rgba(0,0,0,.2)
+}
+
+
+/* *,
+:root {
+  /* --pc: 17.2267 .028331 139.549991;
+  --sc: 14.6752 .033181 35.353059;
+  --ac: 14.8459 .026728 311.37924;
+  --inc: 17.2157 .028409 206.182959;
+  --suc: 17.2343 .028437 166.534048;
+  --wac: 17.2327 .028447 94.818679;
+  --erc: 16.4838 .019914 33.756357;
+  --p: 86.1335 .141656 139.549991;
+  --s: 73.3759 .165904 35.353059;
+  --a: 74.2296 .133641 311.37924;
+  --n: 24.7311 .020483 264.094728;
+  --nc: 82.9011 .031335 222.959324;
+  --b1: 30.8577 .023243 264.149498;
+  --b2: 28.0368 .01983 264.182074;
+  --b3: 26.3469 .018403 262.177739;
+  --bc: 82.9011 .031335 222.959324;
+  --in: 86.0785 .142046 206.182959;
+  --su: 86.1717 .142187 166.534048;
+  --wa: 86.1634 .142236 94.818679;
+  --er: 82.4189 .09957 33.756357;
+  --rounded-box: 1rem;
+  --rounded-btn: .5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: .25s;
+  --animation-input: .2s;
+  --btn-focus-scale: .95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: .5rem;
+  --fallback-pc: rgb(9, 19, 7);
+  --fallback-sc: rgb(22, 5, 3);
+  --fallback-ac: rgb(14, 8, 19);
+  --fallback-inc: rgb(1, 19, 22);
+  --fallback-suc: rgb(3, 20, 13);
+  --fallback-wac: rgb(20, 16, 3);
+  --fallback-erc: rgb(22, 11, 9);
+  --fallback-p: rgb(159, 232, 141);
+  --fallback-s: rgb(255, 125, 92);
+  --fallback-a: rgb(199, 146, 233);
+  --fallback-n: rgb(28, 33, 43);
+  --fallback-nc: rgb(178, 204, 214);
+  --fallback-b1: rgb(42, 48, 60);
+  --fallback-b2: rgb(36, 41, 51);
+  --fallback-b3: rgb(32, 37, 46);
+  --fallback-bc: rgb(178, 204, 214);
+  --fallback-in: rgb(40, 235, 255);
+  --fallback-su: rgb(98, 239, 189);
+  --fallback-wa: rgb(239, 208, 87);
+  --fallback-er: rgb(255, 174, 155);
+  --btn-color: rgb(36, 41, 51);
+} */
+
+html :where(.menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(summary, .active, .btn).focus,
+html :where(.menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(summary, .active, .btn):focus,
+html :where(.menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):is(summary):not(.active, .btn):focus-visible,
+html :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn).focus,
+html :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn):focus,
+html :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):is(summary):not(.active, .btn):focus-visible {
+  color: var(--fallback-b1);
+}
+
+/* html :where(.menu li:not(.menu-title,.disabled)>*:not(ul,details,.menu-title)):not(.active,.btn):hover,
+html :where(.menu li:not(.menu-title,.disabled)>details>summary:not(.menu-title)):not(.active,.btn):hover {
+  color: var(--fallback-b1);
+} */
+
+:root, html {
+  color: var(--bc);
+}

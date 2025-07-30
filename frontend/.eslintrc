@@ -1,0 +1,56 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+  },
+  "plugins": ["@typescript-eslint", "vue", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/typescript",
+    "@vue/typescript/recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true,
+    },
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "parser": "@typescript-eslint/parser",
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-unused-vars": "warn",
+    "vue/multi-word-component-names": "off",
+    "vue/no-case-declarations": "off",
+    "padding-line-between-statements": [
+      "off",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "*",
+      },
+    ],
+    "vue/no-use-v-if-with-v-for": [
+      "error",
+      {
+        "allowUsingIterationVar": true,
+      },
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-duplicate-imports": "error",
+    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-namespace": "off",
+    "prettier/prettier": ["warn"],
+  },
+}

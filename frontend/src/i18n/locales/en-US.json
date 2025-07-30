@@ -1,0 +1,841 @@
+{
+  "id": "en-US",
+  "project": {
+    "name": "AiBeTrade",
+    "addr": "U.M.G.T. LTD HE 444618 Cyprus",
+    "copyright": "© 2023-{year} All rights reserved"
+  },
+  "shorts": {
+    "seconds": "s",
+    "minutes": "m",
+    "hours": "h",
+    "days": "d"
+  },
+  "Year": "Year | Years",
+  "Month": "Month | Months",
+  "Week": "Week | Weeks",
+  "Days": "Day | Days",
+  "Hours": "Hour | Hours",
+  "Minutes": "Minute | Minutes",
+  "Accept": "Accept",
+  "Deny": "Cancel",
+  "See": "Ok",
+  "Prev": "Last",
+  "General": "General",
+  "Language": "Language",
+  "Me": "Me",
+  "before": "to",
+  "Add": "Add",
+  "Edit": "Edit",
+  "Remove": "Remove",
+  "Cancel": "Cancel",
+  "Buy": "Get",
+  "Buyed": "Got",
+  "Get": "Get",
+  "Pay": "Get",
+  "Download": "Download",
+  "Switch": "Switch",
+  "Apply": "Apply",
+  "Save": "Save",
+  "Delete": "Delete",
+  "Close": "Close",
+  "Create": "Create",
+  "Sent": "Sent",
+  "Open": "Open",
+  "Back": "Back",
+  "Make": "Make",
+  "Done": "Done",
+  "Adding": "Adding",
+  "List": "List",
+  "ListEmpty": "List empty",
+  "StartDate": "Start date",
+  "EndDate": "End date",
+  "Go": "Go",
+  "Activity": "Activity",
+  "ActivityBot": "Bot activity",
+  "Start": "Start",
+  "End": "End",
+  "ToExtend": "Extend",
+  "Success": "Success",
+  "Error": "Error",
+  "Warning": "Warning",
+  "Information": "Information",
+  "Version": "Version",
+  "Build": "Build",
+  "Date": "Date",
+  "Price": "Price",
+  "Quantity": "Quantity",
+  "Amount": "Amount",
+  "ChargeAmount": "Your balance will be debited",
+  "SignalUid": "Signal ID",
+  "SymbolCode": "Currency pair",
+  "PriceOpen": "Opening price",
+  "PriceClose": "Closing price",
+  "TakeProfit": "Profit",
+  "Loss": "Loss",
+  "Profitability": "Profitability",
+  "StopLoss": "Stop Loss",
+  "CreatedAt": "Created",
+  "ClosedAt": "Closed",
+  "CancelledAt": "Cancelled",
+  "ChargedAt": "Charged",
+  "ApprovedAt": "Approved",
+  "FromUID": "From UID",
+  "Transaction": "Transaction",
+  "Limit": "Limit",
+  "Percent": "Percent",
+  "TradeType": "Trading Settings",
+  "Deposit": "Deposit",
+  "Reinvest": "Reinvest",
+  "TradePercent": "Deposit percent",
+  "TradePercentOnDeal": "Percent of deposit for each trade",
+  "Type": "Type",
+  "Plan": "Tariff",
+  "Plans": "Tariffs",
+  "TariffType": "Tariff type",
+  "TariffTitle": "Client tariffs for the use of trading bots",
+  "Autotrading": "Autotrading",
+  "Place": "Position",
+  "Bot": "Bot",
+  "Cryptocurrency": "Cryptocurrency",
+  "Currency": "Currency",
+  "Exchange": "Exchange",
+  "Exchanges": "Exchanges",
+  "Leverage": "Leverage",
+  "Balance": "Balance",
+  "BalanceCurrent": "Your current balance",
+  "BalanceAfter": "It will remain on your balance after debiting",
+  "BalanceNext": "Your balance will be credited",
+  "Profit": "Profit",
+  "OpenTransactions": "Open transactions",
+  "ChoosingExchange": "Exchange selection",
+  "Passphrase": "Keyword",
+  "Bid": "{currency} bid",
+  "FromWhom": "From whom",
+  "TypeOfPayment": "Payment type",
+  "And": "And",
+  "OR": "OR",
+  "Index": "Home",
+  "Authorization": "Authorization",
+  "Registration": "Registration",
+  "TradingBots": "Trading Bots",
+  "Strategies": "Strategies",
+  "Strategy": "Strategy",
+  "ChoosingStrategy": "Choosing a strategy",
+  "Invited": "Invited",
+  "InvitedTotal": "Invited total",
+  "PersonallyInvited": "Personally invited",
+  "InvitedLimit": "Invitation limit",
+  "ReferralNetwork": "Friends",
+  "ReferralLink": "Referral link",
+  "ReferralLinks": "Referral links",
+  "ReferralPromoCode": "Referral promo code",
+  "MyFriends": "My friends",
+  "CopyLink": "Copy link",
+  "Promocode": "Promo code",
+  "Chat": "Chat",
+  "MyPromoCode": "My promo code",
+  "Finance": "Finance",
+  "Purchases": "Purchases",
+  "Customer": "Customer",
+  "Parntner": "Partner",
+  "Profile": "Profile",
+  "Settings": "Settings",
+  "Payments": "Payments",
+  "Oracle": "Oracle",
+  "Analytics": "Analytics",
+  "Documents": "Documents",
+  "PressToCopy": "Click to copy",
+  "Payout": "Payout",
+  "Withdraw": "Withdraw",
+  "AddingFunds": "Refill",
+  "PaymentsLog": "Payment log",
+  "WithdrawFromBalance": "Withdraw from balance",
+  "TopUpBalance": "Top up your balance",
+  "DepositAmount": "The amount of the deposit",
+  "Level": "Level",
+  "Distributor": "Distributor",
+  "distributor": "distributor",
+  "LoginOrEmail": "Login or mail",
+  "Password": "Password",
+  "ConfirmPassword": "Repeat password",
+  "SignIn": "Log in",
+  "SignUp": "Register",
+  "Logout": "Log out",
+  "NotAlready": "Don't you have an account yet?",
+  "AlreadyHave": "Do you already have an account?",
+  "Name": "Name",
+  "Nickname": "Nickname",
+  "Show": "Show",
+  "ShowMore": "Show more",
+  "Email": "Email",
+  "Login": "Login",
+  "CloseMenu": "Close menu",
+  "new": "new",
+  "Status": "Status",
+  "AccountNumber": "USDT BEP20 Wallet",
+  "AccountName": "Full name",
+  "Commission": "Commission",
+  "MethodCode": "Method code",
+  "Reason": "Reason",
+  "Total": "Total",
+  "Rank": "Rank",
+  "Ranks": "Ranks",
+  "Select": "Select",
+  "Description": "Description",
+  "PotentialProfitability": "Potential profitability",
+  "Copied": "Copied",
+  "MyTeam": "My team",
+  "roles": {
+    "client": "Client",
+    "distributor": "Distributor"
+  },
+  "Premium": "Subscription",
+  "Debugging_file": "Debug file",
+  "Update": "Update",
+  "UpdateIt": "Update",
+  "Payment": "",
+  "Active": "Active",
+  "On": "On",
+  "Off": "Off",
+  "Category": "Category",
+  "Spot": "Spot",
+  "Futures": "Futures",
+  "RiskLevel": "Risk",
+  "MinDeposit": "Min. deposit",
+  "MaxDeposit": "Max. deposit",
+  "ShareProfit": "Share profit",
+  "BuyTariff": "Payment of the tariff",
+  "BuyDistributor": "Distributor's payment",
+  "WHATS_INCLUDED": "The composition of the set",
+  "Soon": "Soon",
+  "SecretKey": "Secret key",
+  "Key": "Key",
+  "Keys": "Keys",
+  "KeysActive": "Active keys",
+  "KeysEdit": "Editing keys",
+  "NoKeys": "There are no keys",
+  "switchKnee": {
+    "left": {
+      "tooltip": "Switching the installation of new users to the left foot"
+    },
+    "auto": {
+      "tooltip": "Automatic selection of the location of new users"
+    },
+    "right": {
+      "tooltip": "Switching the installation of new users to the right foot"
+    },
+    "success": "Successfully switched",
+    "error": "Switching error"
+  },
+  "AddExchange": "Add an exchange",
+  "AddBot": "Add a bot",
+  "CreatePayout": "Create payout",
+  "PayoutAmountMin": "Minimum withdrawal amount",
+  "DepositAmountMin": "The minimum amount to deposit",
+  "PayoutFeePercent": "Commission",
+  "PayoutFeePercentMinMax": "But no less than {amount}",
+  "PayoutTotalInfo": "The payment is made in the USDT currency on the TON network",
+  "Wallet": "Wallet",
+  "Loading": "Loading...",
+  "OpenWallet": "Open wallet",
+  "ConnectWallet": "Connect wallet",
+  "DoNotClose": "Do not close the window while processing is in progress.",
+  "AnyQuestions": "Any questions?",
+  "ApplyAgreement": "I have read and accept all risk statements and regulatory documents",
+  "ClearCache": "Clearing the cache",
+  "Disconect": "Disconect",
+  "modalSettings": {
+    "title": "Settings"
+  },
+  "modalExchange": {
+    "title": "Adding an exchange",
+    "IfAvailable": "If available"
+  },
+  "modalExchanges": {
+    "title": "Exchanges"
+  },
+  "BotAdding": "Adding a bot",
+  "BotEditing": "Editing a bot",
+  "theme": {
+    "title": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "System"
+  },
+  "notifications": {
+    "empty": "There are no notifications"
+  },
+  "TelegeamVersion": "Telegram version",
+  "WebVersion": "Web version",
+  "CurrentRank": "Current rank",
+  "Events": "Notifications",
+  "Shop": "Shop",
+  "Sale": "Discount",
+  "Boost": "Boost",
+  "Boosts": "Products",
+  "Autofarming": "Autofarming",
+  "Roadmap": "Timeline",
+  "Timeline": "Timeline",
+  "WellDone": "Well done!",
+  "GameWin": "You have guessed the combination and your prize is",
+  "Congratulate": "CONGRATULATE!",
+  "Collect": "Collect",
+  "Great": "Great",
+  "ShowCompletedTasks": "Show completed tasks",
+  "TimeToUse": "Time of action",
+  "Infinite": "Infinite",
+  "Forever": "Forever",
+  "error": {
+    "accessDenied": "Login or password error.",
+    "userAuthNotFound": "Login or password error.",
+    "emailPasswordWrong": "Login or password error.",
+    "tokenGenerationError": "Login or password error.",
+    "refreshGenerationError": "Login or password error.",
+    "userNotFound": "Login or password error.",
+    "emailEmpty": "Empty Email field",
+    "emailWrong": "Invalid Email format",
+    "passwordEmpty": "Empty password field",
+    "passwordTooShort": "Password is too short",
+    "refUidEmpty": "Empty invitee field",
+    "validationError": "Error. {error}",
+    "passwordsNotEqual": "Passwords don't match",
+    "refUidNotFound": "The invitee was not found",
+    "teamTooSmall": "The team must be more than 2 people",
+    "recordNotFound": "Record not found",
+    "nicknameWrong": "Invalid nickname format",
+    "fillAllFields": "Fill in all the fields",
+    "requiredAgreement": "An agreement with the rules is required",
+    "botAlreadyExists": "Bot already exists",
+    "claimMinPeriod": "Not enough time has passed to collect coins",
+    "refUserLimitError": "Invitation limit",
+    "refSelfError": "The use of your promo code is prohibited",
+    "walletNotConnected": "Wallet not connected",
+    "walletExists": "Another wallet number is registered in the system",
+    "walletEmpty": "The wallet number is not registered",
+    "comboAlreadyUsed": "The combination has already been opened",
+    "comboLimitReached": "The combination has already been used the maximum number of times",
+    "safeNotHacked": "The safe has not been hacked"
+  },
+  "tariffs": {
+    "start": {
+      "name": "Start",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 1",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}",
+        "currency": "Number of currencies: 1",
+        "deposit": "Bot deposit: 5,000 usdt"
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 10",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}",
+        "currency": "Number of currencies: 5",
+        "deposit": "Bot deposit: 15,000 usdt"
+      }
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 50",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}",
+        "currency": "Number of currencies: 10",
+        "deposit": "Bot deposit: 50,000 usdt"
+      }
+    },
+    "silver": {
+      "name": "Silver",
+      "sale": "10% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}"
+      }
+    },
+    "gold": {
+      "name": "Gold",
+      "sale": "15% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    },
+    "platinum": {
+      "name": "Platinum",
+      "sale": "20% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    },
+    "brilliant": {
+      "name": "Brilliant",
+      "sale": "25% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    },
+    "features": {
+      "deposit": "Bot deposit: {amount}",
+      "currency_count": "Number of currencies: {count}",
+      "bot": "Number of bots: {count}"
+    }
+  },
+  "info": {
+    "analitics": "This section contains the historical and forecast of the selected currencies. To add a new forecast to the list, click the button on the right. All the information provided is provided as a reference and should not be regarded as a guide to action, but only as a recommendation. All financial risks associated with the decisions taken are entirely the responsibility of the user.",
+    "finance": "This section contains the purchase history of tariffs. The purchase status is also displayed in this list (canceled or not).",
+    "oracle": "This section presents oracle forecasts on cryptocurrency exchange rates and justifications for this forecast. It is not an investment recommendation. AiBeTrade is not responsible for possible losses in the case of transactions or investments in financial instruments mentioned in this information, and does not recommend using this information as the only source of information when making an investment decision. The final decisions in all cases will be made exclusively by the client",
+    "pagePayments": {
+      "rules": {
+        "title": "Bonus payment rules",
+        "message": "Binary and matching bonuses become available for withdrawal weekly from 12:00 UTC on Monday last week, the rest of the bonuses are available immediately.&n&  Minimum withdrawal amount: {amountmin}.&n& Commission: {feepercent}, but not less than {feemin}.&n&  The withdrawal is made within 72 hours after the application is formed."
+      },
+      "info": "This section contains the history of accrued commissions. All commissions indicated in the table have already been transferred to your wallet and do not require additional actions."
+    },
+    "tariffs": "When purchasing a tariff, you will get access to all its features and all the privileges specified in its description for a period of 30 days. You can buy any other customer plan at any time. If you buy the same tariff, its validity period is extended by 30 days. To be able to buy an affiliate tariff, you need to have an active Professional client tariff.",
+    "tradingBots": {
+      "title": "There are several exchanges available on the platform for trading.",
+      "text": "To add an exchange, click the add exchange button. For each exchange, you will need an API Key and a Secret Key, which you can request in your personal account of your exchange. After that, you can add trading robots. To do this, click the add button in the trading bots table and select the necessary settings. After adding the bot, it immediately starts trading according to the selected parameters."
+    },
+    "warning": {
+      "botDelete": {
+        "text": "When the bot is deleted, active trades will not be closed. If the bot has active trades, you will need to close them on the exchange yourself!"
+      },
+      "botChange": {
+        "text": "When the bot is deactivated, active trades will not be closed. If the bot has active trades, you will need to close them on the exchange yourself!"
+      },
+      "tradingBots": {
+        "title": "Risk warning and Disclaimer!",
+        "text": "Dear user! Digital currency trading services provided by trading platforms such as Bybit, Huobi, Binance, Bidget, OKX, Mexc and others are very risky, so users should exercise caution when opening trading orders and transactions with digital currencies. AiBeTrade provides exclusively automation tools for placing trading orders, analytics and forecasts of the value of the selected digital currency, as well as recommended, but not guaranteed pre-settings of trading strategies that can be changed by the user at any time. The corresponding transaction parameters are configured and managed by the users themselves. The use of AiBeTrade tools and services means that the user fully understands and agrees with the risks of using these trading tools. Losses and risks caused to registered users from digital currency trading platforms such as Bybit, Huobi, Binance, Bidget, OKX, Mexc and others are not related to AiBeTrade."
+      }
+    },
+    "typesStrategies": {
+      "title": "Description of strategy types",
+      "text": "To open and close trades, the strategy uses several different indicators to determine the current trend of an asset. An additional filter for entering a trade is indicators to determine the strength of the trend. If the strength of the trend is less than the specified threshold, then the entry into the transaction is not carried out, therefore only 1 to 3 transactions are opened per week. Most of the strategy's trades are closed at a loss by stop loss, there are few profitable ones, but one profitable one covers all losses. The ratio of profitable and unprofitable transactions is 1 profitable to 4 unprofitable. Stop loss is set at 0.8% for purchases 0.5% for sale, Take 26% for purchases 1.7% for sale. Moving the stop loss to breakeven when 55% of the take profit range is reached."
+    },
+    "strategies_ico": {
+      "title": "🚀 We present our new product, which has no analogues on the market - ICO Trading Bot! 🤖",
+      "text": "Based on advanced algorithms, it analyzes the ICO market in real time, opening up profitable investment opportunities for you.&n& Our bot offers strategic insights, risk management, transaction automation and an intuitive interface.&n&  His job is to buy coins at the initial listing on exchanges and exit transactions at the peak of the asset price. Stay tuned in this section and connect the bot to the coins you are interested in! 📈 💼"
+    },
+    "botAdded": "The bot has been added",
+    "botAdited": "The bot has been edited",
+    "botDeleted": "The bot has been deleted",
+    "pageExchangesIP": {
+      "title": "List of IP addresses for exchanges",
+      "text": "This list is required to specify IP addresses in the settings when creating keys on your chosen exchange",
+      "IPS": "167.172.90.168,128.199.56.24,128.199.56.32,209.38.216.234,134.209.225.22"
+    },
+    "pageExchanges": {
+      "registration_on_bybit": "How to register an account on Bybit",
+      "create_wallet_ММ_iOS": "How to create a Metamask wallet and add a Binance network",
+      "connecting_exchange_and_creating_bot": "How to connect an exchange and create a bot"
+    },
+    "OnlyForClients": "For clients only",
+    "PromocodeApplied": "Promo code applied",
+    "PromocodeError": "Promo code error",
+    "tradeType": {
+      "limit": "The trading bot limit is the amount of funds available for the trading bot to operate, beyond which the system cannot use for executing trading operations. Setting this limit will not only allow for effective deposit management but also establish a risk management system. &n& For example: if you have funds of 1000 USDT placed on the exchange. Setting a limit of 200 USDT for a specific trading bot means that the size of the trading order for this strategy will not exceed the specified amount and under no circumstances will it expend the remaining 800 USDT. Additionally, depending on the chosen risk level of the strategy, the trading bot will be halted when a drawdown level is reached, ensuring managed risk and insuring you against complete loss of the deposit.",
+      "percent": "Percentage of deposit refers to a percentage of the current remaining deposit balance in the exchange account, excluding open trades, which will be used for each new trade."
+    },
+    "tradeReinvest": "Profit reinvestment is the increase in the trading limit size through the profit earned from executed trades. All funds within the established limit and the results of trading operations will be directed towards further trading.",
+    "paySystem": {
+      "payRequaredUSDT": "Payment is accepted in USDT BEP20"
+    },
+    "bot": {
+      "leverage": "In this field, specify the leverage size that is specified in the trading settings on your exchange. In case of incorrect indication of the leverage or other than the one configured on the exchange, transactions may not be created."
+    },
+    "isOurCompany": {
+      "title": "The promo code is missing",
+      "text": "Enter a promo code to start collecting coins.  If you don't have it, you can get it in our chat."
+    },
+    "isRefInviteEnds": {
+      "title": "Invitation limit",
+      "text": "You have registered using the promo code {promocode}, which has run out of invitations. Specify a different promo code. If you don't have it, you can get it in our chat."
+    },
+    "paymentsMessages": {
+      "success": "The receipt was successful",
+      "failed": "Get failed",
+      "InsufficientFunds": "Insufficient funds",
+      "transactionHasBeenSent": "The transaction has been sent. After a while, the funds will be credited to the account.",
+      "payoutTimeRestriction": "The funds will be credited to your wallet within 72 hours"
+    },
+    "farming_activation_task": {
+      "title": "Activation",
+      "text": "To activate farming, you need to subscribe to the channels below:"
+    },
+    "tasks": {
+      "warning_1": "You get additional ABT coins in exchange for completing the task. In case of unsubscription, all charges will be deducted from your balance."
+    },
+    "wallet": {
+      "wallets_count": "Attention! You can add a wallet to your account only once. Securely store account accesses to your wallet. The ABT team never requests access codes to your wallets."
+    },
+    "BalanceNotEnoughFunds": {
+      "part_1": "There are not enough funds in the account.",
+      "part_2": "Top up your account in the balance section."
+    },
+    "payment_upgrading": {
+      "title": "Payment upgrading",
+      "text": "App is in process on upgrading to Telegram Star payment now. To use other methods, copy the link and paste it into your browser.",
+      "copy": "Copy link",
+      "if_fill_error": "If you have any problems replenishing your balance, write to us in support"
+    },
+    "safe_game": {
+      "title": "How do I open the safe?",
+      "text": "It's simple!  Twist the coin and enter the cipher of the code from the safe. Only 8 digits separate you from the grand Prize! All ciphers from the safe are unique and are generated automatically after inviting a newcomer to your team.&n& The number of ciphers is unlimited and after opening the safe, you will receive the next one if you invite another beginner. &n& &b&What are the prizes?&b& &n& You can win a random Prize from 0.05 UDEX to 1000 UDEX or from 50 ABT to 100,000 ABT. &n& &b&How can I open the additional digits of the cipher?&b& &n& Each new member of your team is +1 additional open digit of your cipher.&n& In total, you can open 5 digits and you will only have to guess the remaining 3 and the prize is yours. &n& &b&How can you make it easier for yourself to open a safe?&b& &n& You can buy the 6 and 7 digits of the cipher from the safe. Then you will have to guess a single digit and collect your Prize.  &n& &b&Why buy additional numbers?&b& &n& If you buy the 6th digit from the cipher to the safe, then your chance of winning a more valuable prize increases by 25%.&n& If you buy the 7th digit from the cipher to the safe, then your chance of winning a more valuable prize increases by 50%."
+    }
+  },
+  "documents": {
+    "Privacy policy": "Privacy policy",
+    "User service agreement": "Agreement on the use of user services",
+    "Risk warning": "Risk warning and Disclaimer",
+    "Disclaimer": "Disclaimer",
+    "Terms of use of the ABT function": "Terms of use of the ABT function"
+  },
+  "coin": {
+    "MyFrieds": "My friends",
+    "Balance": "Balance",
+    "Farming": "Farming",
+    "Store": "Storage",
+    "store": {
+      "output": {
+        "min": "Available for withdrawal via:",
+        "max": "Time until the storage is full:",
+        "full": "The store is full! Collect the coins.",
+        "new_full": "The store is empty! Collect the first coins.",
+        "farming_info": "Try to fill the storage as much as possible, but do not allow it to overflow."
+      }
+    },
+    "btn": {
+      "first": "Take your first ones",
+      "toBalance": "Take it out of storage",
+      "inProgress": "In progress",
+      "Collect": "Забрать"
+    },
+    "rewardFriendsPurchases": "Reward from friends' purchases",
+    "farming": {
+      "Farming": "Farming",
+      "Invite": "Invite",
+      "Team": "Friends",
+      "Subscription": "Subscription",
+      "Tasks": "Tasks",
+      "Autotrade": "Autotrade",
+      "info": {
+        "farming": {
+          "title": "Farming",
+          "text": "Up to 0.9 ABT is delivered to the storage every 24 hours. The storage is filled in about 8 hours and its maximum capacity is 0.3 ABT. When the storage is full, farming is suspended. To collect ABT, you need to extract coins to your account from the vault."
+        },
+        "invite": {
+          "title": "Invite",
+          "text": "For each friend's invitation, you will be credited 1 ABT immediately to your account."
+        },
+        "team": {
+          "title": "Friends",
+          "text": "For each farming of a team member, ABT is awarded up to 10 levels of the invitation chain:&n& Level 1: 30%&n& Level 2: 20%&n& Level 3: 10%&n& Level 4: 5%&n& Level 5: 5%&n& Level 6: 5%&n& Level 7: 5%&n& Level 8: 5%&n& Level 9: 5%&n& Level 10: 5%&n&"
+        },
+        "subscription": {
+          "title": "Tariff",
+          "text": "For every udex 50 spent on the tariff, 1 ABT is credited immediately."
+        },
+        "tasks": {
+          "title": "Tasks",
+          "text": "",
+          "task": {
+            "sub_1002118909508": "+{amount} coin To join the community chat abtminerchat:",
+            "sub_1001609461642": "+{amount} coin Subscribe to the official channel aibetrade:",
+            "sub_1001967803227": "+{amount} coin Subscribe to the official channel aibetradecom:",
+            "boost_1001609461642": "+{amount} coin Boost the official channel aibetrade:",
+            "boost_1001967803227": "+{amount} coin Boost the official channel aibetradecom:",
+            "sub_1002236091407": "+{amount} coin Subscribe to the channel Hamster TRUMP 🐹",
+            "sub_1001517527759": "+{amount} coin Subscribe to the channel Anton Crypto ABT MINER",
+            "sub_1001280052910": "+{amount} coin Subscribe to the channel keep signals ",
+            "sub_1001990947315": "+{amount} coin Subscribe to the channel Brrrrren"
+          }
+        }
+      }
+    },
+    "menu": {
+      "farm": "Farm",
+      "info": "Information",
+      "timeline": "Timeline",
+      "how_farm": "How to farm ABT coin?",
+      "autotrade": "Autotrading",
+      "friends": "Clients"
+    },
+    "timeline": {
+      "time_1": "2nd Quarter of 2024",
+      "text_1": "✅ Token issuance. ✅ Competition for the formation of a Community with valuable prizes. ✅ 6 contests and tasks to develop user activity. ✅ Launch of the auto-trading platform.",
+      "time_2": "3rd Quarter of 2024",
+      "text_2": "Launch of P2P service. Collaboration with influencers. Target audience formation. Adding new token mining modes. Expanding the possibilities of coin usage. Creation of a partner pool.",
+      "time_3": "4th Quarter of 2024",
+      "text_3": "Token presale. Finalization of negotiations with centralized exchanges. Cross-marketing actions with project partners. Launch of a platform for collective ownership of tokenized assets. Competitions among users.",
+      "time_4": "1st Quarter of 2025",
+      "text_4": "Launching token trading on several exchanges. Coin staking. Launch of a social transformation project. Reaching an audience of over 1 million users.",
+      "time_5": "2nd to 4th Quarter of 2025",
+      "text_5": "Launch of the platform's launchpad. Launch of the coinsale platform. Reaching an audience of over 3 million users."
+    },
+    "info": {
+      "start": {
+        "title": "Mining Start",
+        "text": "April 29, 2024"
+      },
+      "max": {
+        "title": "Max. Mining 24h.",
+        "text": ""
+      },
+      "presale": {
+        "title": "Presale",
+        "text": "* Planned period"
+      },
+      "volume": {
+        "title": "Mining Volume",
+        "text": "0.00 ABT (0.0%)"
+      },
+      "listing": {
+        "title": "Listing"
+      },
+      "comments": {
+        "title": "Comment"
+      }
+    },
+    "info_1": {
+      "title": "AiBeTrade Ecosystem",
+      "text": "Welcome to the future of the cryptosphere, where tradition merges with innovation, creating new opportunities for everyone. We are excited to introduce you to the world of AiBeTrade — a revolutionary ecosystem that is ready to change your perception of cryptocurrencies and open the doors to unexplored opportunities in crypto trading and crypto assets. AiBeTrade represents a single platform that combines modern tools and technologies: from auto trading and P2P exchange of crypto assets to launchpads, a marketplace for tokenized assets, and social projects. Altogether, this forms an advanced, efficiently functioning ecosystem for the benefit of each of its participants."
+    },
+    "info_2": {
+      "title": "ABT Coin",
+      "text": "Proudly introducing ABT Coin — not just another cryptocurrency, but the heart of our AiBeTrade ecosystem, a treasure trove of opportunities for growth and interaction in the world of digital assets. ABT Coin is created for those ready to move forward, explore new horizons in crypto technologies, and participate in creating a decentralized future."
+    },
+    "info_3": {
+      "title": "Integral Currency",
+      "text": "ABT Coin is a unique cryptocurrency designed for transaction settlements, distributing profits within and beyond the AiBeTrade ecosystem. ABT Coin is an integral part of the development of the ecosystem and the Community."
+    },
+    "info_4": {
+      "title": "Emission Volume",
+      "text": "The total emission volume is 21 billion coins based on the TON blockchain. This means the number of coins is limited to a single issue and does not imply dilution of its value."
+    },
+    "info_5": {
+      "title": "Mining",
+      "text": "Mining is carried out by ecosystem users: daily drops, inviting, accomplishing tasks, boosts, get services, and other activities."
+    },
+    "info_6": {
+      "title": "Halving",
+      "text": "The mining of the coin will be halved every 210,000 coins. This will create deflationary pressure on the coin, which will stimulate early involvement and the development of active community members.\""
+    },
+    "info_7": {
+      "title": "Coin Availability Restrictions",
+      "text": "Project owners and development team: 2 years from the moment of listing with quarterly gradual unlocking. Early investors: 12 months with gradual coin unlocking. Public offering: 1 month. Development fund and reserve: coins unlocked only upon reaching certain project development goals or in case of critical market fluctuations. Community and marketing: no restrictions. Staking and rewards for holders: no restrictions. The reward plan for the staking program will be presented after the listing."
+    },
+    "farm_info_1": {
+      "title": "Daily farming",
+      "text": "0.3 ABT is received into the storage every 24 hours. The storage is filled in about 8 hours. To collect abt, you need to extract coins to your account from the vault. When the storage is full, farming is suspended."
+    },
+    "farm_info_2": {
+      "title": "Inviting friends",
+      "text": "For each friend's invitation, you will be credited 1 ABT immediately to your account."
+    },
+    "farm_info_3": {
+      "title": "For creating a team",
+      "text": "For each invitation of a team member, ABT coin will be credited to 10 levels of the invitation chain (from 30% for the 2nd level and up to 5% for the 10th level) immediately to the account"
+    },
+    "farm_info_4": {
+      "title": "Purchase a subscription",
+      "text": "For every 50 udex spent on a service subscription, 1 ABT is credited immediately to the account"
+    },
+    "farm_info_5": {
+      "title": "Follow the news on the website and in our telegram groups",
+      "text": "In this block, you need to make cart icons and links to the group and chat, as well as a globe type and a link to the site."
+    },
+    "games": {
+      "title": "Games",
+      "arrows": "Arrows",
+      "safe": "Safe",
+      "none": "Off"
+    }
+  },
+  "safe_game": {
+    "buy_key_text": "Open the {key}th digit",
+    "invite_text": "Access to the safe is closed! &n& To open access to entering the cipher from the safe, you need to invite 1 friend. For inviting friends, you can open up to 5 digits in the code hint! &n& Enter an 8-digit cipher from the safe and take up to 100,000 ABT or up to 1,000 UDEX!"
+  },
+  "strategies": {
+    "STrand_Buy": "To open and close trades, the strategy uses several different indicators to determine the current trend of an asset. An additional filter for entering a trade is indicators to determine the strength of the trend. If the strength of the trend is less than the specified threshold, then the entry into the transaction is not carried out, therefore only 1 to 3 transactions are opened per week. Most of the strategy's trades are closed at a loss by stop loss, there are few profitable ones, but one profitable one covers all losses. The ratio of profitable and unprofitable transactions is 1 profitable to 4 unprofitable. Stop loss is set at 0.8% for purchases 0.5% for sale, Take 26% for purchases 1.7% for sale. Moving the stop loss to breakeven when 55% of the take profit range is reached.",
+    "MACD_2XMA_RSI": "The purpose of the strategy: This strategy combines classical technical analysis with the capabilities of artificial intelligence (AI) to more accurately determine the entry and exit points of trading positions, increasing trading efficiency and optimizing risk management. Main components: Integration of AI with the MACD indicator: AI analyzes MACD signals, optimizing the accuracy of determining the points of intersection of its lines to identify the optimal entry points into a trade. AI and additional indicators (RSI, MA): AI uses RSI and moving averages (MA) for additional analysis of the market situation, improving the quality of trading signals and reducing the likelihood of false positives. Adaptive stop loss and take profit using AI: Stop loss and take profit are set based on AI analysis that takes into account current market conditions and historical data to maximize potential profits and minimize risks. Dynamic risk management with AI: AI adapts the strategy of moving the stop loss to the break-even point, responding to changes in market conditions to protect profits and prevent losses. Automation and frequency of transactions: An AI-driven strategy allows you to automate the trading process by making about 100 optimized transactions per year.",
+    "GridAI": "The strategy uses an increase in the open position during the drawdown of the cryptocurrency, and thus averages the purchase price. When the price returns above the average purchase value, the position gained is closed by take profit or trailing stop. The trailing stop is activated only when the gained position turns into profit. The strategy is almost all the time in the purchase, sales are not provided. The strategy is high-risk. With a strong drop in the cryptocurrency by 60 % or more and no subsequent growth to previous levels, it will be impossible to withdraw a position to plus or breakeven and a drawdown will remain on the account and the cryptocurrency is recruited for the entire amount allocated for the management of the strategy. Therefore, if the risk of remaining in a drawdown with the purchased cryptocurrency is unacceptable, you should not use a strategy, or you should allocate only small amounts for which it is acceptable to manage the strategy.",
+    "GridEA": "The long-term strategy uses an increase in the open position during the drawdown of the cryptocurrency, and thus averages the purchase price. When the price returns above the average purchase value, the position gained is closed by take profit or trailing stop. The trailing stop is activated only when the gained position turns into profit. Low-frequency with a high drawdown rate (up to 30%) for the portfolio and a conservative yield potential (up to 85% per annum). 10 pairs of cryptocurrencies participate in trading on the spot market: BATUSDT,BCHUSDT, ETHUSDT, BTCUSDT, LINKUSDT, MKRUSDT, NEOUSDT, TRXUSDT, XLMUSDT, XRPUSDT. The recommended size of the limit at which the strategy will work most effectively is from 2000 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side. With a strong drop in the cryptocurrency by 60% or more, the position remains in the asset in the hold state until it turns into profit. If the risk of remaining in a drawdown with the purchased cryptocurrency is unacceptable for you, then you should not use this strategy.",
+    "GridEAF": "The long-term strategy uses an increase in the open position during the drawdown of the cryptocurrency, and thus averages the purchase price. When the price returns above the average purchase value, the position gained is closed by take profit or trailing stop. The trailing stop is activated only when the gained position turns into profit. Low-frequency with a high drawdown rate (up to 30%) for the portfolio and a conservative yield potential (up to 85% per annum). 10 pairs of cryptocurrencies participate in trading on the futures market: BATUSDT,BCHUSDT, ETHUSDT, BTCUSDT, LINKUSDT, MKRUSDT, NEOUSDT, TRXUSDT, XLMUSDT, XRPUSDT. The recommended size of the limit at which the strategy will work most effectively is from 2000 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side. With a strong drop in the cryptocurrency by 60% or more, the position remains in the asset in the hold state until it turns into profit. If the risk of remaining in a drawdown with the purchased cryptocurrency is unacceptable for you, then you should not use this strategy.",
+    "NewsAI": "The strategy uses a stream of news on cryptocurrencies. Based on the news , the current news background for the last 1,3,5,7,14 days is compiled and, depending on the news background, a position is opened or the current position is increased. The position is increased only when the drawdown occurs, as well as in the grid strategy. The decision to open a position is made based on the influence of the news background on the price in previous periods of time.",
+    "NewsEAF": "The unique strategy works on the basis of the ABT Neural neural network of its own design and analyzes news streams using artificial intelligence, issuing signals to buy (long position) or sell (short position) cryptocurrencies. It works on the futures market with the following cryptocurrency pairs: BTCUSDT, ETHUSDT, XRPUSDT. The position is closed by take profit or trailing stop. The strategy is low-frequency with an average drawdown level (up to 20%) for the portfolio and a conservative yield potential (up to 95% per annum). The recommended size of the limit at which the strategy will work most effectively is from 1800 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side.",
+    "ICO All": "Based on advanced algorithms, it analyzes the ICO market in real time, opening up profitable investment opportunities for you.&n& Our bot offers strategic insights, risk management, transaction automation and an intuitive interface.&n&  His job is to buy coins at the initial listing on exchanges and exit transactions at the peak of the asset price. Stay tuned in this section and connect the bot to the coins you are interested in! 📈 💼",
+    "MF_CHILL": "MF Chill is an affiliate strategy with the payment of a reward to the trader in the amount of 30% of the profit. The strategy is trending. This strategy has been developed exclusively for our site. Low-frequency with a minimum drawdown level (up to 10%) for the portfolio and a conservative yield potential (up to 60% per annum). &n& 8 pairs of cryptocurrencies participate in trading on the futures market: dogeusdt, aaveusdt, adjust, xrpusdt, maticusdt, solusdt, avaxusdt, chzusdt. The recommended size of the limit at which the strategy will work most effectively is from 3200 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side.",
+    "MF_REACTOR": "MF Reactor is an affiliate strategy with the payment of a reward to the trader in the amount of 30% of the profit. The strategy is trending. This strategy has been developed exclusively for our site. An average frequency with an average drawdown level (up to 20%) for the portfolio and an average yield potential (up to 110% per annum). &n& 8 pairs of cryptocurrencies participate in trading on the futures market: atomusdt, dotusdt, dydxusdt, opusdt, renusdt, sandusdt, tonusdt, shib1000usdt. The recommended size of the limit at which the strategy will work most effectively is from 2400 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side.",
+    "MF_SCALP": "MF Scalper is an affiliate strategy with the payment of a reward to the trader in the amount of 30% of the profit. The strategy is universal and works on all types of rank behavior (trend, counter trend, flat). This strategy has been developed exclusively for our site. An average frequency with a high drawdown level (up to 30%) for the portfolio and a high yield potential (up to 163% per annum). &n& 8 pairs of cryptocurrencies participate in trading on the futures market: compusdt, c98usdt, ensusdt, balusdt, ftmusdt, algousdt, etcusdt, sushiusdt. The recommended size of the limit at which the strategy will work most effectively is from 1600 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side.",
+    "MF_SCALP100": "MF Scalper is an affiliate strategy with the payment of a reward to the trader in the amount of 30% of the profit. The strategy is universal and works on all types of rank behavior (trend, counter trend, flat). This strategy has been developed exclusively for our site. An average frequency with a high drawdown level (up to 30%) for the portfolio and a high yield potential (up to 163% per annum). &n& 1 pair of cryptocurrency participate in trading on the futures market: etcusdt. The recommended size of the limit at which the strategy will work most effectively is from 100 usdt. If you specify a limit of less than the recommended amount, there may be situations of non-execution of orders on the exchange's side."
+  },
+  "products": {
+    "category": {
+      "premium": "Subscription",
+      "subscription": "Subscription",
+      "autofarm": "Autofarming",
+      "boost_x3": "Boost X3",
+      "boost_x5": "Boost X5",
+      "boost_x10": "Boost X10",
+      "boost_x20": "Boost X20",
+      "boost_x50": "Boost X50",
+      "boost_x50_lifetime": "Voucher NFT Ambassador",
+      "safe_6th_digit": "6th digit from the safe",
+      "safe_7th_digit": "7th digit from the safe",
+      "boost_archon": "Boost Archon",
+      "boost_archon_text": "Adds 30,000 ABT at once and gives the Archon rank",
+      "boost_x": {
+        "text": "Increase of all ABT coin mining options x{count} by {day} days.&n& The increase applies to:&n& - farming of ABT coins.&n& - reward for inviting friends.&n& - reward for completing tasks.&n&"
+      },
+      "boost_x_lifetime": {
+        "text": "The voucher gives you the opportunity to mint the NFT Ambassador when the NFT collection will be launched&n& Increase of all ABT coin mining options x{count}.&n& The increase applies to:&n& - farming of ABT coins.&n& - reward for inviting friends.&n& - reward for completing tasks.&n&"
+      }
+    },
+    "text": {
+      "premium": {
+        "title": "What do you get from SUBSCRIPTION",
+        "text": "Increased storage x{multiplier}.&n& Increased amount of stamp x{multiplier}.&n& Premium coin.&n& Auto-informator.&n& The number of links for the invitation is +150 (if the subscription is for 30 days).&n& The number of links for the invitation is Infinite (if the subscription is for a year).&n&"
+      },
+      "autofarm": {
+        "text": "The auto farming function will collect every last coin for you and will not allow the storage to overflow. Now you can sleep peacefully."
+      },
+      "safe_key": {
+        "text": "Opens the {digit}th digit in the safe code hint, BUT only if the {digitprev} digits in the hint are already open"
+      }
+    }
+  },
+  "tasks": {
+    "title": "Tasks",
+    "text": "",
+    "task": {
+      "marafon": {
+        "title": "Marathon of invitations",
+        "requirement": "Requirement: 7 consecutive days of min. 2 people invited.",
+        "reward": "For the invited: +3 ABT&n& To the invited: +3 ABT&n& Condition Fulfillment: +100 ABT&n&",
+        "fail": "The marathon has not been completed!",
+        "success": "Congratulations, you have passed the Marathon!",
+        "time_marathon": "The time of the marathon",
+        "invited_today": "Invited today",
+        "remain": "It remains until the end of the day"
+      },
+      "sub_1002118909508": "+{amount} coin To join the community chat abtminerchat:",
+      "sub_1001609461642": "+{amount} coin Subscribe to the official channel aibetrade:",
+      "sub_1001967803227": "+{amount} coin Subscribe to the official channel aibetradecom:",
+      "boost_1001609461642": "+{amount} coin Boost the official channel aibetrade:",
+      "boost_1001967803227": "+{amount} coin Boost the official channel aibetradecom:",
+      "sub_1002236091407": "+{amount} coin Subscribe to the channel Hamster TRUMP 🐹",
+      "sub_1001517527759": "+{amount} coin Subscribe to the channel Anton Crypto ABT MINER",
+      "sub_1002023672378": "+{amount} coin Subscribe to the channel cryptolamer_news",
+      "sub_1001280052910": "+{amount} coin Subscribe to the channel keep signals ",
+      "sub_1001990947315": "+{amount} coin Subscribe to the channel Brrrrren",
+      "sub_1001657532978": "+{amount} coin Subscribe to the channel Web3profits",
+      "sub_1002242862285": "+{amount} coin Subscribe to the channel ABT BITS REVIEW",
+      "sub_1002247551722": "+{amount} coin Subscribe to the channel ABT BITS Trading",
+      "sub_1002231035352": "+{amount} coin Subscribe to the chat ABT BITS (CIS)",
+      "sub_1002163616957": "+{amount} coin Subscribe to the chat ABT BITS (ENG)",
+      "sub_1001247903732": "+{amount} coin Subscribe to the channel antizarplata",
+      "boost_1002247551722": "+{amount} coin Boost the ABT Bits Trading channel",
+      "sub_1002185622410": "+{amount} coin Subscribe to the channel  🇹🇷ABT|Turkey"
+    }
+  },
+  "autotrade": {
+    "title": "Trading",
+    "info": {
+      "title": "ABTBits is a new generation trading robot! 🤖.",
+      "more": "More detailed",
+      "text": "Are you looking for a stable income or additional profit?&n& &n& ABTBits is a new generation trading robot! 🤖&n& &n& ABTBits is an innovative bot based on a neural network and artificial intelligence. It collects data from over 500 sources and sends signals to the exchange for super efficient scalping trading!&n& &n& 🔥 Advantages of ABTBits:&n& 🔹 Income up to 25% per month&n& 🔹 Low entry threshold: Start with only 20 USDT&n& 🔹 Transparent commissions: Only 5% for deposits and withdrawals.&n& 🔹 Daily reports: Follow the progress in real time!&n& &n& 💰 Start earning with ABTBits today!&n& &n& With ABTBits, your path to financial freedom will become easier and closer! 🚀&n&",
+      "notEnoughMin": "There are not enough funds for a minimum deposit. Top up your balance."
+    },
+    "AccountBalance": "Account balance",
+    "MonthlyProfit": "Monthly profit",
+    "AllTimeProfit": "All time profit",
+    "AllTimeLoss": "All time loss",
+    "transactiosType": {
+      "filter": {
+        "all": "All",
+        "deposit": "Deposit",
+        "withdraw": "Withdraw",
+        "trade": "Trade"
+      }
+    }
+  },
+  "Discovery": "Discovery",
+  "discovery": {
+    "app": {
+      "siteUrl": "Game website",
+      "nfterrium": {
+        "name": "NFTERRIUM GAME",
+        "description": "The history of humanity's development in the world we know has ceased to exist. &n& The discovery of new possibilities for humankind has not only allowed us to conquer the expanses of the Universe but also significantly enhance the capabilities of humans themselves. &n& Nftterrium is a new open galaxy, with many planets suitable for human habitation. &n& The conquest of new lands has become vital for the continuation of life and the dominance of humans in the New Era. ",
+        "url": "nfterrium.com"
+      },
+      "cardgame": {
+        "name": "CardGame",
+        "description": "CardGame description"
+      }
+    }
+  },
+  "autotrade_pro": {
+    "name": "Autotrade PRO",
+    "go": "Upgrade to PRO",
+    "part_1": {
+      "description": {
+        "title": "Description of the strategy:",
+        "text": "Low risk is a strategy that uses elements of technical analysis and the AiBeTrade neural network to determine entry and exit points for more than 20 currency pairs.  &n& The historical data of the trading strategy for the year of operation show excellent results, taking into account the tasks of reducing the risks of liquidating positions and amounted to 214.62%. Constant monitoring of the effectiveness of the trading strategy provides excellent results within the framework of preserving and increasing capital. "
+      },
+      "procedure": {
+        "title": "Connection procedure:",
+        "text": "To connect to autotrading, you need to provide the API data of your account on the exchange. This is safe, as we do not have access to deposits and withdrawals of funds — only to sending trading signals. Contact our support team and declare your desire to activate the autotrading service. After receiving the application, our employee will contact you and guide you through all the steps of setting up and connecting your account to our trading strategy. Thus, the connection process will become simple and understandable for all customers."
+      },
+      "exchanges": {
+        "title": "Supported exchanges:",
+        "text": "We recommend using a separate subaccount for autotrading."
+      },
+      "mutual": {
+        "title": "Mutual settlements and payment for the services of the service:",
+        "text": "We work on the principle of Share Profit. This means that we earn only if the client earns. Thus, we are interested in making our trading strategy work effectively. &n& The base rate is 30% of the profit received if the trading deposit is no more than 10K USD &n& Special conditions for professional participants: &n& 25% with a deposit from 10K to 50K USD &n& 20% for deposits over 50K USD &n& Settlements are made once a quarter by transferring the commission to the specified details."
+      },
+      "refusal": {
+        "title": "Disclaimer of liability:",
+        "text": "We associate you with the fact that stock trading of asset scripts seems to be a high-risk type of investment, it can be both a win and a loss. Therefore, the decision is made to connect to a trading strategy, you take on all the risks associated with possible murders. We do not and cannot guarantee you profit, we declare and publish only historical data and the results of the latest trades of our strategy."
+      },
+      "link": {
+        "end": "If you are ready and accept the risks mentioned above, write to our support service <a href=\"https://t.me/abtsupportbot\" target=\"_blank\" >{'@'}abtsupportbot</a>"
+      }
+    },
+    "gotopro": {
+      "title": "Switch to Pro",
+      "text": "The Autotrade service is currently suspended. Use the Autotrade Pro service!"
+    }
+  },
+  "Clients": "Clients",
+  "Partners": "Partners",
+  "Assigned Partners": "Assigned Partners",
+  "Available Slots": "Available Slots",
+  "Total Slots": "Total Slots",
+  "Available Clients": "Available Clients",
+  "No partners assigned yet": "No partners assigned yet",
+  "No clients available": "No clients available",
+  "Add Partner": "Add Partner",
+  "Already Partner": "Already Partner",
+  "Joined": "Joined",
+  "PremiumSlots": "Subscription",
+  "MyDeposit": "Deposit",
+  "Stores": "Store",
+  "Invite": "Invite",
+  "Trades": "Trading",
+  "Customers": "Customers",
+  "Associates": "Associates"
+}

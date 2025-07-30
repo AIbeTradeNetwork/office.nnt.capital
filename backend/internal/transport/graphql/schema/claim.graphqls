@@ -1,0 +1,24 @@
+type Claim {
+    code: String!
+    min_period: Int!
+    max_period: Int!
+    amount: Int!
+    currency_code: String!
+    precision: Int!
+}
+
+type ClaimBalance {
+    claim_code: String!
+    claimed_at: Int!
+    balance: Int!
+    precision: Int!
+}
+
+extend type Query {
+    get_claim(code: String!): Claim! @hasAuth
+    get_claim_balance(code: String!): ClaimBalance! @hasAuth
+}
+
+extend type Mutation {
+    set_claim(code: String!): ClaimBalance! @hasAuth
+}

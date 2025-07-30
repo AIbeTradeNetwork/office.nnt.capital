@@ -1,0 +1,24 @@
+type Task {
+    code: String!
+    texts: Locale!
+    currency_code: String!
+    precision: Int!
+    amount: Int!
+    link: String!
+    completed: Boolean!
+    is_approve: Boolean!
+}
+
+type TaskRes {
+    user_uid: String!
+    result: String!
+}
+
+extend type Query {
+    tasks: [Task!]! @hasAuth
+}
+
+extend type Mutation {
+    approve_task(code: String!): Task! @hasAuth
+    decline_task(code: String!, tgids: [String!]!): [TaskRes!]! @hasAuth
+}

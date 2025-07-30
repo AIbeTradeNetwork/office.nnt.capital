@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+}
+
+/* @layer base {
+  html:has(.drawer-toggle:checked) {
+    scrollbar-gutter: ;
+  }
+} */
+
+@layer components {
+  #app {
+    @apply min-h-dvh;
+  }
+
+  .app-inner {
+    width: 100%;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+
+  /* .scrollbar-stable {
+    scrollbar-gutter: stable;
+  } */
+
+  .menu a.route-exact-active-link,
+  .menu .route-exact-active-link:hover,
+  .menu .route-exact-active-link:active,
+  .menu .route-exact-active-link:focus {
+    @apply bg-neutral text-neutral-content;
+  }
+
+  .padding-x {
+    @apply mobile:px-[theme(spacing.2)] pc:px-[theme(spacing.6)];
+  }
+
+  .-padding-x {
+    @apply w-auto mobile:mx-[calc(-1*theme(spacing.2))] pc:mx-[calc(-1*theme(spacing.6))];
+  }
+
+  .box {
+    @apply p-4 bg-base-100 text-base-content rounded-box;
+  }
+
+  .title {
+    @apply text-base-content font-bold text-xl;
+  }
+
+  .form {
+    @apply flex flex-col gap-4 my-4;
+  }
+  
+  .insta-bg {
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(50deg, #7d5ff9, #d90075);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .box-shadow {
+    box-shadow: 0 0 10px 1px #7d5ff9;
+  }
+
+  .page {
+    @apply padding-x flex flex-col w-full max-w-full mobile:gap-2 pc:gap-6 mobile:py-2 pc:py-6;
+  }
+
+  .btn > * {
+    @apply pointer-events-none;
+  }
+
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.8s ease;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  /* .animate-stroke-dash path:first-child {
+        stroke-dashoffset: 10;
+        animation: animate-stroke-dash 3s linear alternate-reverse infinite;
+        @apply text-orange-400;
+      }
+      
+      @keyframes animate-stroke-dash {
+        0% {
+          stroke-dasharray: 3;
+        }
+        100% {
+          stroke-dasharray: 4;
+        }
+      } */
+}

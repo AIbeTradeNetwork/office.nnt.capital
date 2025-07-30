@@ -1,0 +1,18 @@
+type Product {
+    code: String!
+    category: String!
+    period: Int!
+    price: Int!
+    retail_price: Int!
+    cv: Int!
+    currency_code: String!
+    precision: Int!
+    priority: Int!
+    multiplier: Int!
+    limit: Int!
+    count: Int!
+}
+
+extend type Query {
+    products(category: String): [Product!]! @hasAuth
+}

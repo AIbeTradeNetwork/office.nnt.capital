@@ -1,0 +1,47 @@
+enum BuyType {
+    undefined
+    client
+    distributor
+}
+
+input BuyReq {
+    code: String!
+}
+
+input BuyProductReq {
+    code: String!
+}
+
+type BuyRes {
+    url: String!
+    uid: String!
+}
+
+type Buy {
+    uid: String!
+    user_uid: String!
+    ref_uid: String!
+    match_uid: String!
+    row: String!
+    col: String!
+    type: BuyType!
+    created_at: Int!
+    paid_at: Int!
+    approved_at: Int!
+    charged_at: Int!
+    refunded_at: Int!
+    plan_code: String!
+    product_code: String!
+    currency_code: String!
+    amount: Int!
+    cv: Int!
+}
+
+extend type Mutation {
+    buy(input: BuyReq!): BuyRes! @hasAuth
+    buy_product(input: BuyProductReq!): BuyRes! @hasAuth
+}
+
+extend type Query {
+    buys(limit: Int!, skip: Int!): [Buy!]! @hasAuth
+}

@@ -1,0 +1,14 @@
+input Prise {
+    to_user_uid: [String!]!
+    type: String!
+    amount: String!
+}
+
+type PriseRes {
+    user_uid: String!
+    result: String!
+}
+
+extend type Mutation {
+    prise(input: Prise!): [PriseRes!]! @hasAuth
+}

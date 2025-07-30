@@ -1,0 +1,17 @@
+type Cfg {
+    payout_amount_min: Int!
+    payout_fee_min: Int!
+    payout_fee_percent: Int!
+    distributor_price: Int!
+    default_currency_code: String!
+    default_ref_uid: String!
+    coin_ref_bonus: Int!
+    coin_code: String!
+    unlim_invite: Boolean!
+    ton_wallet: String!
+    ref_safe_uid: String!
+}
+
+extend type Query {
+    cfg: Cfg! @hasAuth
+}

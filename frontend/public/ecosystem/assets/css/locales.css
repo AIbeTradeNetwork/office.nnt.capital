@@ -1,0 +1,38 @@
+.translation-selector {
+  position: relative;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center;
+  margin-top: -5px;
+  margin-left: 5px;
+}
+
+.translation-selector > .fi {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .translation-selector {
+    position: absolute;
+    top: 32px;
+    right: 15px;
+  }
+
+  .translation-selector > .fi {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .translation-selector {
+    right: 5px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .translation-selector {
+    right: 17px;
+  }
+}

@@ -1,0 +1,42 @@
+mutation OrderCreate(
+    $order: OrderCreateIn!
+) {
+    order_create(order: $order) {
+        billId
+        url
+    }
+}
+
+mutation OrderCancel(
+    $id: UUID!
+) {
+    order_cancel(id: $id)
+}
+
+query OrderInfo(
+    $id: UUID!
+) {
+    order_info(id: $id) {
+        amount
+        amountPaid
+        billId
+        changedDateTime
+        comment
+        creationDateTime
+        currency
+        customFields{
+            name
+            value
+        }
+        customer{
+            account
+            email
+            phone
+        }
+        expirationDateTime
+        merchantId
+        payUrl
+        paymentSystemID
+        status
+    }
+}

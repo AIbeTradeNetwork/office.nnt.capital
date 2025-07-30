@@ -1,0 +1,20 @@
+type Combo {
+    uid: String!
+    name: String!
+    currency_code: String!
+    precision: Int!
+    amount: Int!
+    prise_code: String!
+    limit: Int!
+    count: Int!
+    start_at: Int!
+    end_at: Int!
+}
+
+extend type Query {
+    combos: [Combo!]! @hasAuth
+}
+
+extend type Mutation {
+    set_combo(code: String!): Combo! @hasAuth
+}

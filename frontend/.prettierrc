@@ -1,0 +1,10 @@
+{
+  "printWidth": 100,
+  "semi": false,
+  "experimentalTernaries": true,
+  "singleQuote": true,
+  "vueIndentScriptAndStyle": true,
+  "singleAttributePerLine": false,
+  "htmlWhitespaceSensitivity": "ignore",
+  "useTabs": false
+}

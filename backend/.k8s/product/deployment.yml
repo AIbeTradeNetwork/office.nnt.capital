@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-v4
+  labels:
+    app: product-v4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-v4
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: product-v4
+    spec:
+      containers:
+        - name: product-v4
+          image: <IMAGE>
+          ports:
+            - containerPort: 8080
+            - containerPort: 2345
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
+          env:
+            - name: LOG_LEVEL
+              value: "error"
+            - name: MONGODB_URL
+              value: "$MONGODB_URL"
+            - name: MONGODB_DATABASE
+              value: "aibetrade"
+            - name: TEMPORAL_URL
+              value: "temporal-frontend.default.svc:7233"
+            - name: HTTP_ADDR
+              value: ":8080"
+            - name: JWT_SECRET
+              value: "$JWT_SECRET"
+            - name: API_ROLE
+              value: "disabled"
+            - name: WORKER_ROLE
+              value: "disabled"
+            - name: NOTIFIER_ROLE
+              value: "disabled"
+            - name: TON_LISTENER_ROLE
+              value: "disabled"
+            - name: TON_WORKER_ROLE
+              value: "disabled"
+            - name: PRODUCT_ROLE
+              value: "enabled"
+            - name: AUTOFARM_ROLE
+              value: "disabled"
+            - name: TG_BOT_API_KEY
+              value: "$TG_BOT_API_KEY"
+            - name: CG_BOT_API_KEY
+              value: "$CG_BOT_API_KEY"
+            - name: TON_NETWORK
+              value: "mainnet"
+            - name: TON_WALLET
+              value: "UQATHp_e7bkvfuLDARXcb8caLBy91NPZ_COjbp4nt0UtqkdG"

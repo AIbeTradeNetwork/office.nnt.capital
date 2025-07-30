@@ -1,0 +1,125 @@
+type UserRank {
+    code: String!
+    start_at: Int!
+    end_at: Int!
+    priority: Int!
+}
+
+type UserPlan {
+    code: String!
+    start_at: Int!
+    end_at: Int!
+    priority: Int!
+}
+
+type UserPlace {
+    row: String!
+    col: String!
+    created_at: Int!
+    match_uid: String!
+}
+
+type UserActivity {
+    start_at: Int!
+    end_at: Int!
+    cv: Int!
+}
+
+type UserLevel {
+    code: String!
+    balance: Int!
+    invite_limit: Int!
+}
+
+type UserConfig {
+    team_type: TeamType!
+}
+
+type Payout {
+    uid: String!
+    amount: Int!
+    commission: Int!
+    currency_code: String!
+    method_code: String!
+    account_number: String!
+    account_name: String!
+    created_at: Int!
+    approved_at: Int!
+    charged_at: Int!
+    cancelled_at: Int!
+    reason: String!
+}
+
+input PayoutReq {
+    currency_code: String!
+    method_code: String!
+    account_number: String!
+    account_name: String!
+}
+
+enum UserRole {
+    client
+    distributor
+}
+
+type UserProduct {
+    code: String!
+    category: String!
+    start_at: Int!
+    end_at: Int!
+    priority: Int!
+    multiplier: Int!
+}
+
+type User {
+    uid: String!
+    ref_uid: String!
+    lim_ref_uid: String!
+    email: String!
+    nickname: String!
+    photo_url: String!
+    created_at: Int!
+    plans: [UserPlan!]!
+    plan: UserPlan
+    role: UserRole!
+    config: UserConfig!
+    tg_id: Int!
+    tg_username: String!
+    balance: Int!
+    """ For DISTRIBUTOR """
+    left: Int!
+    """ For DISTRIBUTOR """
+    right: Int!
+    """ For DISTRIBUTOR """
+    ranks: [UserRank!]!
+    """ For DISTRIBUTOR """
+    rank: UserRank
+    """ For DISTRIBUTOR """
+    place: UserPlace
+    """ For DISTRIBUTOR """
+    activity: UserActivity
+    level: UserLevel!
+    team_count: Int!
+    ton_wallet: String!
+    unlim_invite: Boolean!
+    products: [UserProduct!]!
+    is_premium: Boolean!
+    premium_until: Int!
+    premium_invites: Int!
+    premium_multiplier: Int!
+    is_autofarm: Boolean!
+    autofarm_until: Int!
+    active_boost: UserProduct
+}
+
+extend type Query {
+    me: User! @hasAuth
+    payouts(limit: Int!, skip: Int!): [Payout!]! @hasAuth
+    levels: [UserLevel!]! @hasAuth
+}
+
+extend type Mutation {
+    set_team_type(type: TeamType!): UserConfig! @hasAuth
+    set_ref(uid: String!): String! @hasAuth
+    payout(input: PayoutReq!): Payout! @hasAuth
+}

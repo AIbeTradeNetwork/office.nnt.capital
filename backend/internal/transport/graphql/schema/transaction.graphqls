@@ -1,0 +1,36 @@
+enum TransactionType {
+    undefined
+    ref
+    bin
+    match
+    firstRank
+    approveRank
+    fastStart
+    payout
+    deposit
+    buy
+    dist
+    task
+    prise
+}
+
+type Transaction {
+    user_uid: String!
+    from_uid: String!
+    percent: Int!
+    level: Int!
+    type: TransactionType!
+    rank_code: String!
+    amount: Int!
+    pos_amount: Int!
+    full_amount: Int!
+    buy_uid: String!
+    payout_uid: String!
+    created_at: Int!
+    charged_at: Int!
+    msg_codes: [String!]
+}
+
+extend type Query {
+    transactions(limit: Int!, skip: Int!): [Transaction!]! @hasAuth
+}

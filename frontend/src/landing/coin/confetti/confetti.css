@@ -1,0 +1,31 @@
+.coin-confetti {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  border-radius: 100px;
+  animation: coin-confetti 2s ease-in infinite;
+}
+
+@keyframes coin-confetti {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+    /* rotate(0deg) */
+  }
+  10% {
+    opacity: 1;
+  }
+  35% {
+    transform: translateY(-500%);
+    /* rotate(270deg) */
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2000%);
+    /* rotate(1440deg) */
+  }
+}

@@ -1,0 +1,20 @@
+import './main.css'
+import { createApp } from 'vue'
+
+import { $queriesGuards } from 'utils/queriesGuards'
+import { $screenGuard } from 'utils/screen'
+import { $formatDateGuard } from 'utils/date'
+import { i18n, $i18nGuard } from 'i18n/index'
+import App from './index.vue'
+;(async () => {
+  try {
+    $queriesGuards()
+    $screenGuard()
+    $formatDateGuard()
+    await $i18nGuard()
+
+    createApp(App).use(i18n).mount('#app')
+  } catch (error) {
+    console.error(error)
+  }
+})()

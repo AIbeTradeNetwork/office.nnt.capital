@@ -1,0 +1,7 @@
+extend type Query {
+    get_ton_payload: String! @hasAuth
+}
+
+extend type Mutation {
+    set_ton_wallet(input: String!): String! @hasAuth
+}

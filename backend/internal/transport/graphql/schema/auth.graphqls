@@ -1,0 +1,46 @@
+type AuthRes {
+    auth_token: String!
+    refresh_token: String!
+}
+
+input AuthLogin {
+    login: String!
+    password: String!
+}
+
+enum Locales {
+    ru
+    en
+}
+
+input AuthRegister {
+    email: String!
+    nickname: String!
+    password: String!
+    repassword: String!
+    ref_uid: String!
+    locale: Locales
+}
+
+input AuthRefresh {
+    refresh_token: String!
+}
+
+input TelegramAuth {
+    id: String!
+    first_name: String!
+    last_name: String!
+    username: String!
+    photo_url: String!
+    auth_date: String!
+    hash: String!
+    ref_uid: String!
+}
+
+extend type Mutation {
+    login(input: AuthLogin!): AuthRes!
+    register(input: AuthRegister!): AuthRes!
+    refresh(input: AuthRefresh!): AuthRes!
+    telegram(input: TelegramAuth!): AuthRes!
+    telegram_app(input: String!): AuthRes!
+}

@@ -1,0 +1,33 @@
+type RankCondition {
+    rank_code: String!
+    team_type: TeamType!
+    is_ref: Boolean!
+    count: Int!
+}
+
+type RankRefBonus {
+    plan_code: String!
+    percent: Int!
+}
+
+type RankGetBonus {
+    amount: Int!
+    months: Int!
+}
+
+type Rank {
+    code: String!
+    min_cv: Int!
+    team_condition: [RankCondition!]!
+    priority: Int!
+    bin_bonus: Int!
+    bin_bonus_limit: Int!
+    ref_bonus: [RankRefBonus!]!
+    match_bonus: [Int!]!
+    first_bonus: RankGetBonus!
+    approve_bonus: RankGetBonus!
+}
+
+extend type Query {
+    ranks: [Rank!]! @hasAuth
+}

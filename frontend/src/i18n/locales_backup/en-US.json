@@ -1,0 +1,290 @@
+{
+  "project": {
+    "name": "AiBeTrade",
+    "addr": "U.M.G.T. LTD HE 444618 Cyprus",
+    "copyright": "© 2023 All rights reserved"
+  },
+  "shorts": {
+    "seconds": "s",
+    "minutes": "m",
+    "hours": "h",
+    "days": "d"
+  },
+  "month": "Month | Months",
+  "days": "Day | Days",
+  "hours": "Hour | Hours",
+  "minutes": "Minute | Minutes",
+  "Themes": {
+    "system": "System",
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "Me": "Me",
+  "before": "before",
+  "EmptyList": "List empty",
+  "StartDate": "Start date",
+  "EndDate": "End date",
+  "Go": "Go",
+  "Activity": "Activity",
+  "Start": "Start",
+  "End": "End",
+  "ToExtend": "Extend",
+  "Error": "Error",
+  "Version": "Version",
+  "Build": "Build",
+  "Date": "Date",
+  "Price": "Price",
+  "Quantity": "Quantity",
+  "Amount": "Amount",
+  "FromUID": "From UID",
+  "Transaction": "Transaction",
+  "Type": "Type",
+  "Plan": "Tariff",
+  "Plans": "Tariffs",
+  "TariffType": "Tariff type",
+  "Place": "Position",
+  "Bot": "Bot",
+  "Cryptocurrency": "Cryptocurrency",
+  "Exchange": "Exchange",
+  "Exchanges": "Exchanges",
+  "Strategy": "Strategy",
+  "Balance": "Balance",
+  "Limit": "Limit",
+  "Profit": "Profit",
+  "OpenTransactions": "Open transactions",
+  "ChoosingExchange": "Exchange selection",
+  "key": "key",
+  "Passphrase": "Keyword",
+  "Bid": "{currency} bid",
+  "FromWhom": "From whom",
+  "TypeOfPayment": "Payment type",
+  "OR": "OR",
+  "Index": "Home",
+  "Authorization": "Authorization",
+  "Registration": "Registration",
+  "TradingBots": "Trading Bots",
+  "Strategies": "Strategies",
+  "Invited": "Invited",
+  "ReferralNetwork": "Team",
+  "ReferralLink": "Referral link",
+  "Finance": "Finance",
+  "Purchases": "Purchases",
+  "Customer": "Customer",
+  "Parntner": "Partner",
+  "Profile": "Profile",
+  "Settings": "Settings",
+  "Payments": "Payments",
+  "Oracle": "Oracle",
+  "Analytics": "Analytics",
+  "Documents": "Documents",
+  "BecomeDistributor": "Become a distributor",
+  "Distributor": "Distributor",
+  "distributor": "distributor",
+  "LoginOrEmail": "Login or mail",
+  "Password": "Password",
+  "confirmPassword": "Repeat password",
+  "SignIn": "Log in",
+  "SignUp": "Register",
+  "Logout": "Log out",
+  "NotAlready": "Don't you have an account yet?",
+  "AlreadyHave": "Do you already have an account?",
+  "Name": "Name",
+  "ShowMore": "Show more",
+  "Email": "Email",
+  "Login": "Login",
+  "CloseMenu": "Close menu",
+  "new": "new",
+  "Status": "Status",
+  "Rank": "Rank",
+  "Select": "Select",
+  "Description": "Description",
+  "Profitability": "Profitability",
+  "Copied": "Copied",
+  "MyTeam": "My team",
+  "roles": {
+    "client": "Client",
+    "distributor": "Distributor"
+  },
+  "Debugging_file": "Debug file",
+  "Update": "Update",
+  "Buy": "Buy",
+  "BuyTariff": "Payment of the tariff",
+  "BuyDistributor": "Distributor's payment",
+  "WHATS_INCLUDED": "The composition of the set",
+  "Apply": "Apply",
+  "Save": "Save",
+  "Close": "Close",
+  "Soon": "Soon",
+  "Download": "Download",
+  "Switch": "Switch",
+  "Pay": "Pay",
+  "SwitchKnee": {
+    "left": {
+      "tooltip": "Switching the installation of new users to the left foot"
+    },
+    "auto": {
+      "tooltip": "Automatic selection of the location of new users"
+    },
+    "right": {
+      "tooltip": "Switching the installation of new users to the right foot"
+    },
+    "success": "Successfully switched",
+    "error": "Switching error"
+  },
+  "AddExchange": "Add an exchange",
+  "AddBot": "Add a bot",
+  "Wallet": "Wallet",
+  "Loading": "Loading...",
+  "OpenWallet": "Open wallet",
+  "DoNotClose": "Do not close the window while processing is in progress.",
+  "DescriptionTypesStrategiesTitle": "Description of strategy types",
+  "DescriptionTypesStrategiesText": "To open and close trades, the strategy uses several different indicators to determine the current trend of an asset. An additional filter for entering a trade is indicators to determine the strength of the trend. If the strength of the trend is less than the specified threshold, then the entry into the transaction is not carried out, therefore only 1 to 3 transactions are opened per week. Most of the strategy's trades are closed at a loss by stop loss, there are few profitable ones, but one profitable one covers all losses. The ratio of profitable and unprofitable transactions is 1 profitable to 4 unprofitable. Stop loss is set at 0.8% for purchases 0.5% for sale, Take 26% for purchases 1.7% for sale. Moving the stop loss to breakeven when 55% of the take profit range is reached.",
+  "documents": {
+    "Privacy policy": "Privacy Policy",
+    "User service agreement": "Agreement on the use of user services",
+    "Risk warning": "Risk Warning",
+    "Disclaimer": "Disclaimer",
+    "Terms of use of the ABT function": "Terms of use of the ABT function"
+  },
+  "modalSettings": {
+    "title": "Settings"
+  },
+  "modalDocuments": {
+    "title": "Documents"
+  },
+  "modalExchange": {
+    "title": "Adding an exchange",
+    "IfAvailable": "If available"
+  },
+  "modalExchanges": {
+    "title": "Exchanges"
+  },
+  "modalStrategiesAdd": {
+    "title": "Adding a bot",
+    "AnyQuestions": "Any questions?",
+    "ApplyText": "I have read and accept all risk statements and regulatory documents",
+    "ApplyTextDocuments": "documents"
+  },
+
+  "modalStrategiesList": {
+    "title": "Choosing a strategy"
+  },
+
+  "Theme": {
+    "title": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "System"
+  },
+
+  "tariffs": {
+    "start": {
+      "name": "Start",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 1",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}",
+        "currency": "Number of currencies: 1",
+        "deposit": "Bot deposit: 5,000 usd"
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 10",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}",
+        "currency": "Number of currencies: 5",
+        "deposit": "Bot deposit: 15,000 usd"
+      }
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "For small teams or individuals",
+      "features": {
+        "bot": "Number of bots: 50",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}",
+        "currency": "Number of currencies: 10",
+        "deposit": "Bot deposit: 50,000 usd"
+      }
+    },
+    "silver": {
+      "name": "Silver",
+      "sale": "10% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Expiration date: {period}"
+      }
+    },
+    "gold": {
+      "name": "Gold",
+      "sale": "15% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    },
+    "platinum": {
+      "name": "Platinum",
+      "sale": "20% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    },
+    "brilliant": {
+      "name": "Brilliant",
+      "sale": "25% discount",
+      "features": {
+        "prev": "Tariff: Professional",
+        "cv": "CV: {count}",
+        "period": "Validity period: {period}"
+      }
+    }
+  },
+
+  "info_page_analitics": "This section contains the historical and forecast of the selected currencies. To add a new forecast to the list, click the button on the right. All the information provided is provided as a reference and should not be regarded as a guide to action, but only as a recommendation. All financial risks associated with the decisions taken are entirely the responsibility of the user.",
+  "info_page_finance": "This section contains the purchase history of tariffs. The purchase status is also displayed in this list (canceled or not).",
+  "info_page_oracle": "This section presents oracle forecasts on cryptocurrency exchange rates and justifications for this forecast. It is not an investment recommendation. AiBeTrade is not responsible for possible losses in the case of transactions or investments in financial instruments mentioned in this information, and does not recommend using this information as the only source of information when making an investment decision. The final decisions in all cases will be made exclusively by the client",
+  "info_page_payments": "This section contains the history of accrued commissions. All commissions indicated in the table have already been transferred to your wallet and do not require additional actions.",
+  "info_page_tariffs_customer": "When purchasing a tariff, you will get access to all its features and all the privileges specified in its description for a period of 30 days. You can buy any other customer plan at any time. If you buy the same tariff, its validity period is extended by 30 days. To be able to buy an affiliate tariff, you need to have an active Professional client tariff.",
+  "info_page_tariffs_partner": "When you purchase a tariff, you will get access to all its features and all the privileges specified in its description for a period of 365 days. To purchase a new tariff, you will either need to fill out the current tariff or wait for it to be completed. If you have an active tariff, you cannot buy tariffs at a level below it.",
+  "info_page_trading_bots": {
+    "title": "There are several exchanges available on the platform for trading.",
+    "text": "To add an exchange, click the add exchange button. For each exchange, you will need an API Key and a Secret Key, which you can request in your personal account of your exchange. After that, you can add trading robots. To do this, click the add button in the trading bots table and select the necessary settings. After adding the bot, it immediately starts trading according to the selected parameters."
+  },
+  "warning_page_trading_bots": {
+    "title": "Risk warning and Disclaimer!",
+    "text": "Dear user! Digital currency trading services provided by trading platforms such as Bybit, Huobi, Binance, Bidget, OKX, Mexc and others are very risky, so users should exercise caution when opening trading orders and transactions with digital currencies. AiBeTrade provides exclusively automation tools for placing trading orders, analytics and forecasts of the value of the selected digital currency, as well as recommended, but not guaranteed pre-settings of trading strategies that can be changed by the user at any time. The corresponding transaction parameters are configured and managed by the users themselves. The use of AiBeTrade tools and services means that the user fully understands and agrees with the risks of using these trading tools. Losses and risks caused to registered users from digital currency trading platforms such as Bybit, Huobi, Binance, Bidget, OKX, Mexc and others are not related to AiBeTrade."
+  },
+  "PaymentsMessages": {
+    "success": "Payment was successful",
+    "failed": "Payment failed",
+    "InsufficientFunds": "Insufficient funds"
+  },
+  "error": {
+    "AccessDenied": "Login or password error.",
+    "userAuthNotFound": "Login or password error.",
+    "emailPasswordWrong": "Login or password error.",
+    "tokenGenerationError": "Login or password error.",
+    "refreshGenerationError": "Login or password error.",
+    "userNotFound": "Login or password error.",
+    "emailEmpty": "Empty Email field",
+    "emailWrong": "Invalid Email format",
+    "passwordEmpty": "Empty password field",
+    "passwordTooShort": "Password is too short",
+    "refUidEmpty": "Empty invitee field",
+    "ValidationError": "Error. {error}",
+    "passwordsNotEqual": "Passwords don't match",
+    "refUidNotFound": "The invitee was not found",
+    "teamTooSmall": "The team must be more than 2 people",
+    "recordNotFound": "Record not found",
+    "nicknameWrong": "Invalid nickname format"
+  }
+}
