@@ -1,0 +1,9 @@
+===== DOCKER COMPOSE PS =====
+NAME               IMAGE            COMMAND                  SERVICE       CREATED         STATUS         PORTS
+backend-api-1      backend-api      "air -c api.air.toml"    api           5 minutes ago   Up 4 minutes   0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp
+backend-worker-1   backend-worker   "air -c api.air.toml"    worker        5 minutes ago   Up 4 minutes   0.0.0.0:8082->8082/tcp, [::]:8082->8082/tcp
+cassandra          cassandra        "docker-entrypoint.s…"   cassandra     5 minutes ago   Up 5 minutes   7000-7001/tcp, 7199/tcp, 9160/tcp, 0.0.0.0:9042->9042/tcp, [::]:9042->9042/tcp
+mongo              mongo:6          "docker-entrypoint.s…"   mongo         5 minutes ago   Up 5 minutes   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp
+temporal-ui        temporalio/ui    "./start-ui-server.sh"   temporal-ui   5 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+
+===== DOCKER LOGS (last 20 lines) =====
