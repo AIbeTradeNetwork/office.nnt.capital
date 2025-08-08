@@ -102,6 +102,14 @@ type TonRepository interface {
 type TeamService interface {
 	PlaceSumAllCvToDate(context.Context, *domain.UserPlace, domain.UserTeamType, *big.Int, time.Time) (int64, error)
 	PlaceGetAllDown(context.Context, *domain.UserPlace, domain.UserTeamType, *big.Int) ([]*domain.UserPlace, error)
+
+	// Partner Application methods
+	CreatePartnerApplication(context.Context, string, *domain.PartnerApplicationReq) (*domain.PartnerApplication, error)
+	ProcessPartnerApplication(context.Context, string, *domain.PartnerApplicationResponseReq) (*domain.PartnerApplication, error)
+	GetPartnerApplications(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	GetMyApplications(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	GetPartnerApplicationsCount(context.Context, string) (int64, error)
+	GetMyApplicationsCount(context.Context, string) (int64, error)
 }
 
 type AuthService interface {

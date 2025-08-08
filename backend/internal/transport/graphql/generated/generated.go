@@ -146,28 +146,30 @@ type ComplexityRoot struct {
 	}
 
 	Mutation struct {
-		AddPartner    func(childComplexity int, userUID string, partnerUID string) int
-		ApproveTask   func(childComplexity int, code string) int
-		Buy           func(childComplexity int, input BuyReq) int
-		BuyProduct    func(childComplexity int, input BuyProductReq) int
-		CheckDeposit  func(childComplexity int, uid string, lt string) int
-		DeclineTask   func(childComplexity int, code string, tgids []string) int
-		Dist          func(childComplexity int) int
-		HackSafe      func(childComplexity int, code string) int
-		Login         func(childComplexity int, input AuthLogin) int
-		Notify        func(childComplexity int, input *Notify) int
-		Payout        func(childComplexity int, input PayoutReq) int
-		Prise         func(childComplexity int, input Prise) int
-		Refresh       func(childComplexity int, input AuthRefresh) int
-		Register      func(childComplexity int, input AuthRegister) int
-		RemovePartner func(childComplexity int, userUID string, partnerUID string) int
-		SetClaim      func(childComplexity int, code string) int
-		SetCombo      func(childComplexity int, code string) int
-		SetRef        func(childComplexity int, uid string) int
-		SetTeamType   func(childComplexity int, typeArg TeamType) int
-		SetTonWallet  func(childComplexity int, input string) int
-		Telegram      func(childComplexity int, input TelegramAuth) int
-		TelegramApp   func(childComplexity int, input string) int
+		AddPartner                func(childComplexity int, userUID string, partnerUID string) int
+		ApproveTask               func(childComplexity int, code string) int
+		Buy                       func(childComplexity int, input BuyReq) int
+		BuyProduct                func(childComplexity int, input BuyProductReq) int
+		CheckDeposit              func(childComplexity int, uid string, lt string) int
+		CreatePartnerApplication  func(childComplexity int, input PartnerApplicationReq) int
+		DeclineTask               func(childComplexity int, code string, tgids []string) int
+		Dist                      func(childComplexity int) int
+		HackSafe                  func(childComplexity int, code string) int
+		Login                     func(childComplexity int, input AuthLogin) int
+		Notify                    func(childComplexity int, input *Notify) int
+		Payout                    func(childComplexity int, input PayoutReq) int
+		Prise                     func(childComplexity int, input Prise) int
+		ProcessPartnerApplication func(childComplexity int, input PartnerApplicationResponseReq) int
+		Refresh                   func(childComplexity int, input AuthRefresh) int
+		Register                  func(childComplexity int, input AuthRegister) int
+		RemovePartner             func(childComplexity int, userUID string, partnerUID string) int
+		SetClaim                  func(childComplexity int, code string) int
+		SetCombo                  func(childComplexity int, code string) int
+		SetRef                    func(childComplexity int, uid string) int
+		SetTeamType               func(childComplexity int, typeArg TeamType) int
+		SetTonWallet              func(childComplexity int, input string) int
+		Telegram                  func(childComplexity int, input TelegramAuth) int
+		TelegramApp               func(childComplexity int, input string) int
 	}
 
 	Notification struct {
@@ -175,6 +177,20 @@ type ComplexityRoot struct {
 		Texts     func(childComplexity int) int
 		ToUserUID func(childComplexity int) int
 		UID       func(childComplexity int) int
+	}
+
+	PartnerApplication struct {
+		Applicant    func(childComplexity int) int
+		ApplicantUID func(childComplexity int) int
+		CreatedAt    func(childComplexity int) int
+		Message      func(childComplexity int) int
+		Partner      func(childComplexity int) int
+		PartnerUID   func(childComplexity int) int
+		ProcessedAt  func(childComplexity int) int
+		ProcessedBy  func(childComplexity int) int
+		Response     func(childComplexity int) int
+		Status       func(childComplexity int) int
+		UID          func(childComplexity int) int
 	}
 
 	Payout struct {
@@ -227,30 +243,34 @@ type ComplexityRoot struct {
 	}
 
 	Query struct {
-		Buys            func(childComplexity int, limit int64, skip int64) int
-		Cfg             func(childComplexity int) int
-		Combos          func(childComplexity int) int
-		Currencies      func(childComplexity int) int
-		DepositTotal    func(childComplexity int, userUID string) int
-		Friends         func(childComplexity int, userUID string, limit int64, skip int64) int
-		FriendsCount    func(childComplexity int, userUID string) int
-		GetClaim        func(childComplexity int, code string) int
-		GetClaimBalance func(childComplexity int, code string) int
-		GetTonPayload   func(childComplexity int) int
-		Levels          func(childComplexity int) int
-		Me              func(childComplexity int) int
-		Notifications   func(childComplexity int) int
-		PartnersCount   func(childComplexity int, userUID string) int
-		Payouts         func(childComplexity int, limit int64, skip int64) int
-		Plans           func(childComplexity int) int
-		Products        func(childComplexity int, category *string) int
-		Ranks           func(childComplexity int) int
-		Tasks           func(childComplexity int) int
-		TeamBin         func(childComplexity int, userUID *string, rows int64) int
-		TeamMatch       func(childComplexity int, userUID *string) int
-		TeamRef         func(childComplexity int, userUID *string) int
-		Transactions    func(childComplexity int, limit int64, skip int64) int
-		UserSafe        func(childComplexity int) int
+		Buys                     func(childComplexity int, limit int64, skip int64) int
+		Cfg                      func(childComplexity int) int
+		Combos                   func(childComplexity int) int
+		Currencies               func(childComplexity int) int
+		DepositTotal             func(childComplexity int, userUID string) int
+		Friends                  func(childComplexity int, userUID string, limit int64, skip int64) int
+		FriendsCount             func(childComplexity int, userUID string) int
+		GetClaim                 func(childComplexity int, code string) int
+		GetClaimBalance          func(childComplexity int, code string) int
+		GetTonPayload            func(childComplexity int) int
+		Levels                   func(childComplexity int) int
+		Me                       func(childComplexity int) int
+		MyApplications           func(childComplexity int, limit int64, skip int64) int
+		MyApplicationsCount      func(childComplexity int) int
+		Notifications            func(childComplexity int) int
+		PartnerApplications      func(childComplexity int, limit int64, skip int64) int
+		PartnerApplicationsCount func(childComplexity int) int
+		PartnersCount            func(childComplexity int, userUID string) int
+		Payouts                  func(childComplexity int, limit int64, skip int64) int
+		Plans                    func(childComplexity int) int
+		Products                 func(childComplexity int, category *string) int
+		Ranks                    func(childComplexity int) int
+		Tasks                    func(childComplexity int) int
+		TeamBin                  func(childComplexity int, userUID *string, rows int64) int
+		TeamMatch                func(childComplexity int, userUID *string) int
+		TeamRef                  func(childComplexity int, userUID *string) int
+		Transactions             func(childComplexity int, limit int64, skip int64) int
+		UserSafe                 func(childComplexity int) int
 	}
 
 	Rank struct {
@@ -441,6 +461,8 @@ type MutationResolver interface {
 	CheckDeposit(ctx context.Context, uid string, lt string) (string, error)
 	Dist(ctx context.Context) (*DistRes, error)
 	Notify(ctx context.Context, input *Notify) (*Notification, error)
+	CreatePartnerApplication(ctx context.Context, input PartnerApplicationReq) (*PartnerApplication, error)
+	ProcessPartnerApplication(ctx context.Context, input PartnerApplicationResponseReq) (*PartnerApplication, error)
 	Prise(ctx context.Context, input Prise) ([]*PriseRes, error)
 	HackSafe(ctx context.Context, code string) (*domain.UserSafe, error)
 	ApproveTask(ctx context.Context, code string) (*Task, error)
@@ -461,6 +483,10 @@ type QueryResolver interface {
 	Currencies(ctx context.Context) ([]*Currency, error)
 	DepositTotal(ctx context.Context, userUID string) (int64, error)
 	Notifications(ctx context.Context) ([]*Notification, error)
+	PartnerApplications(ctx context.Context, limit int64, skip int64) ([]*PartnerApplication, error)
+	MyApplications(ctx context.Context, limit int64, skip int64) ([]*PartnerApplication, error)
+	PartnerApplicationsCount(ctx context.Context) (int64, error)
+	MyApplicationsCount(ctx context.Context) (int64, error)
 	Plans(ctx context.Context) ([]*Plan, error)
 	Products(ctx context.Context, category *string) ([]*Product, error)
 	Ranks(ctx context.Context) ([]*Rank, error)
@@ -1010,6 +1036,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Mutation.CheckDeposit(childComplexity, args["uid"].(string), args["lt"].(string)), true
 
+	case "Mutation.create_partner_application":
+		if e.complexity.Mutation.CreatePartnerApplication == nil {
+			break
+		}
+
+		args, err := ec.field_Mutation_create_partner_application_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Mutation.CreatePartnerApplication(childComplexity, args["input"].(PartnerApplicationReq)), true
+
 	case "Mutation.decline_task":
 		if e.complexity.Mutation.DeclineTask == nil {
 			break
@@ -1088,6 +1126,18 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.Mutation.Prise(childComplexity, args["input"].(Prise)), true
+
+	case "Mutation.process_partner_application":
+		if e.complexity.Mutation.ProcessPartnerApplication == nil {
+			break
+		}
+
+		args, err := ec.field_Mutation_process_partner_application_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Mutation.ProcessPartnerApplication(childComplexity, args["input"].(PartnerApplicationResponseReq)), true
 
 	case "Mutation.refresh":
 		if e.complexity.Mutation.Refresh == nil {
@@ -1236,6 +1286,83 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.Notification.UID(childComplexity), true
+
+	case "PartnerApplication.applicant":
+		if e.complexity.PartnerApplication.Applicant == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.Applicant(childComplexity), true
+
+	case "PartnerApplication.applicant_uid":
+		if e.complexity.PartnerApplication.ApplicantUID == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.ApplicantUID(childComplexity), true
+
+	case "PartnerApplication.created_at":
+		if e.complexity.PartnerApplication.CreatedAt == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.CreatedAt(childComplexity), true
+
+	case "PartnerApplication.message":
+		if e.complexity.PartnerApplication.Message == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.Message(childComplexity), true
+
+	case "PartnerApplication.partner":
+		if e.complexity.PartnerApplication.Partner == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.Partner(childComplexity), true
+
+	case "PartnerApplication.partner_uid":
+		if e.complexity.PartnerApplication.PartnerUID == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.PartnerUID(childComplexity), true
+
+	case "PartnerApplication.processed_at":
+		if e.complexity.PartnerApplication.ProcessedAt == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.ProcessedAt(childComplexity), true
+
+	case "PartnerApplication.processed_by":
+		if e.complexity.PartnerApplication.ProcessedBy == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.ProcessedBy(childComplexity), true
+
+	case "PartnerApplication.response":
+		if e.complexity.PartnerApplication.Response == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.Response(childComplexity), true
+
+	case "PartnerApplication.status":
+		if e.complexity.PartnerApplication.Status == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.Status(childComplexity), true
+
+	case "PartnerApplication.uid":
+		if e.complexity.PartnerApplication.UID == nil {
+			break
+		}
+
+		return e.complexity.PartnerApplication.UID(childComplexity), true
 
 	case "Payout.account_name":
 		if e.complexity.Payout.AccountName == nil {
@@ -1610,12 +1737,50 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Query.Me(childComplexity), true
 
+	case "Query.my_applications":
+		if e.complexity.Query.MyApplications == nil {
+			break
+		}
+
+		args, err := ec.field_Query_my_applications_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Query.MyApplications(childComplexity, args["limit"].(int64), args["skip"].(int64)), true
+
+	case "Query.my_applications_count":
+		if e.complexity.Query.MyApplicationsCount == nil {
+			break
+		}
+
+		return e.complexity.Query.MyApplicationsCount(childComplexity), true
+
 	case "Query.notifications":
 		if e.complexity.Query.Notifications == nil {
 			break
 		}
 
 		return e.complexity.Query.Notifications(childComplexity), true
+
+	case "Query.partner_applications":
+		if e.complexity.Query.PartnerApplications == nil {
+			break
+		}
+
+		args, err := ec.field_Query_partner_applications_args(context.TODO(), rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Query.PartnerApplications(childComplexity, args["limit"].(int64), args["skip"].(int64)), true
+
+	case "Query.partner_applications_count":
+		if e.complexity.Query.PartnerApplicationsCount == nil {
+			break
+		}
+
+		return e.complexity.Query.PartnerApplicationsCount(childComplexity), true
 
 	case "Query.partners_count":
 		if e.complexity.Query.PartnersCount == nil {
@@ -2584,6 +2749,8 @@ func (e *executableSchema) Exec(ctx context.Context) graphql.ResponseHandler {
 		ec.unmarshalInputBuyReq,
 		ec.unmarshalInputInLocale,
 		ec.unmarshalInputNotify,
+		ec.unmarshalInputPartnerApplicationReq,
+		ec.unmarshalInputPartnerApplicationResponseReq,
 		ec.unmarshalInputPayoutReq,
 		ec.unmarshalInputPrise,
 		ec.unmarshalInputTelegramAuth,
@@ -2890,6 +3057,50 @@ extend type Query {
 extend type Mutation {
     notify(input: Notify): Notification! @hasAuth
 }`, BuiltIn: false},
+	{Name: "../schema/partner_application.graphqls", Input: `enum PartnerApplicationStatus {
+    pending
+    approved
+    rejected
+}
+
+type PartnerApplication {
+    uid: String!
+    applicant_uid: String!
+    partner_uid: String!
+    status: PartnerApplicationStatus!
+    message: String!
+    response: String!
+    created_at: Int!
+    processed_at: Int
+    processed_by: String!
+    
+    # Связанные данные (необязательные)
+    applicant: User
+    partner: User
+}
+
+input PartnerApplicationReq {
+    partner_uid: String!
+    message: String!
+}
+
+input PartnerApplicationResponseReq {
+    application_uid: String!
+    status: PartnerApplicationStatus!
+    response: String!
+}
+
+extend type Query {
+    partner_applications(limit: Int!, skip: Int!): [PartnerApplication!]! @hasAuth
+    my_applications(limit: Int!, skip: Int!): [PartnerApplication!]! @hasAuth
+    partner_applications_count: Int! @hasAuth
+    my_applications_count: Int! @hasAuth
+}
+
+extend type Mutation {
+    create_partner_application(input: PartnerApplicationReq!): PartnerApplication! @hasAuth
+    process_partner_application(input: PartnerApplicationResponseReq!): PartnerApplication! @hasAuth
+} `, BuiltIn: false},
 	{Name: "../schema/plan.graphqls", Input: `type Plan {
     code: String!
     period: Int!
@@ -3358,6 +3569,21 @@ func (ec *executionContext) field_Mutation_check_deposit_args(ctx context.Contex
 	return args, nil
 }
 
+func (ec *executionContext) field_Mutation_create_partner_application_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 PartnerApplicationReq
+	if tmp, ok := rawArgs["input"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
+		arg0, err = ec.unmarshalNPartnerApplicationReq2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationReq(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["input"] = arg0
+	return args, nil
+}
+
 func (ec *executionContext) field_Mutation_decline_task_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
 	var err error
 	args := map[string]interface{}{}
@@ -3449,6 +3675,21 @@ func (ec *executionContext) field_Mutation_prise_args(ctx context.Context, rawAr
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
 		arg0, err = ec.unmarshalNPrise2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPrise(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["input"] = arg0
+	return args, nil
+}
+
+func (ec *executionContext) field_Mutation_process_partner_application_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 PartnerApplicationResponseReq
+	if tmp, ok := rawArgs["input"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
+		arg0, err = ec.unmarshalNPartnerApplicationResponseReq2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationResponseReq(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -3745,6 +3986,54 @@ func (ec *executionContext) field_Query_get_claim_balance_args(ctx context.Conte
 		}
 	}
 	args["code"] = arg0
+	return args, nil
+}
+
+func (ec *executionContext) field_Query_my_applications_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 int64
+	if tmp, ok := rawArgs["limit"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("limit"))
+		arg0, err = ec.unmarshalNInt2int64(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["limit"] = arg0
+	var arg1 int64
+	if tmp, ok := rawArgs["skip"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+		arg1, err = ec.unmarshalNInt2int64(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["skip"] = arg1
+	return args, nil
+}
+
+func (ec *executionContext) field_Query_partner_applications_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
+	var err error
+	args := map[string]interface{}{}
+	var arg0 int64
+	if tmp, ok := rawArgs["limit"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("limit"))
+		arg0, err = ec.unmarshalNInt2int64(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["limit"] = arg0
+	var arg1 int64
+	if tmp, ok := rawArgs["skip"]; ok {
+		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+		arg1, err = ec.unmarshalNInt2int64(ctx, tmp)
+		if err != nil {
+			return nil, err
+		}
+	}
+	args["skip"] = arg1
 	return args, nil
 }
 
@@ -7593,6 +7882,204 @@ func (ec *executionContext) fieldContext_Mutation_notify(ctx context.Context, fi
 	return fc, nil
 }
 
+func (ec *executionContext) _Mutation_create_partner_application(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Mutation_create_partner_application(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Mutation().CreatePartnerApplication(rctx, fc.Args["input"].(PartnerApplicationReq))
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.(*PartnerApplication); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be *server/internal/transport/graphql/generated.PartnerApplication`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(*PartnerApplication)
+	fc.Result = res
+	return ec.marshalNPartnerApplication2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplication(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Mutation_create_partner_application(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Mutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_PartnerApplication_uid(ctx, field)
+			case "applicant_uid":
+				return ec.fieldContext_PartnerApplication_applicant_uid(ctx, field)
+			case "partner_uid":
+				return ec.fieldContext_PartnerApplication_partner_uid(ctx, field)
+			case "status":
+				return ec.fieldContext_PartnerApplication_status(ctx, field)
+			case "message":
+				return ec.fieldContext_PartnerApplication_message(ctx, field)
+			case "response":
+				return ec.fieldContext_PartnerApplication_response(ctx, field)
+			case "created_at":
+				return ec.fieldContext_PartnerApplication_created_at(ctx, field)
+			case "processed_at":
+				return ec.fieldContext_PartnerApplication_processed_at(ctx, field)
+			case "processed_by":
+				return ec.fieldContext_PartnerApplication_processed_by(ctx, field)
+			case "applicant":
+				return ec.fieldContext_PartnerApplication_applicant(ctx, field)
+			case "partner":
+				return ec.fieldContext_PartnerApplication_partner(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type PartnerApplication", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Mutation_create_partner_application_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Mutation_process_partner_application(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Mutation_process_partner_application(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Mutation().ProcessPartnerApplication(rctx, fc.Args["input"].(PartnerApplicationResponseReq))
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.(*PartnerApplication); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be *server/internal/transport/graphql/generated.PartnerApplication`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(*PartnerApplication)
+	fc.Result = res
+	return ec.marshalNPartnerApplication2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplication(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Mutation_process_partner_application(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Mutation",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_PartnerApplication_uid(ctx, field)
+			case "applicant_uid":
+				return ec.fieldContext_PartnerApplication_applicant_uid(ctx, field)
+			case "partner_uid":
+				return ec.fieldContext_PartnerApplication_partner_uid(ctx, field)
+			case "status":
+				return ec.fieldContext_PartnerApplication_status(ctx, field)
+			case "message":
+				return ec.fieldContext_PartnerApplication_message(ctx, field)
+			case "response":
+				return ec.fieldContext_PartnerApplication_response(ctx, field)
+			case "created_at":
+				return ec.fieldContext_PartnerApplication_created_at(ctx, field)
+			case "processed_at":
+				return ec.fieldContext_PartnerApplication_processed_at(ctx, field)
+			case "processed_by":
+				return ec.fieldContext_PartnerApplication_processed_by(ctx, field)
+			case "applicant":
+				return ec.fieldContext_PartnerApplication_applicant(ctx, field)
+			case "partner":
+				return ec.fieldContext_PartnerApplication_partner(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type PartnerApplication", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Mutation_process_partner_application_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
+	}
+	return fc, nil
+}
+
 func (ec *executionContext) _Mutation_prise(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
 	fc, err := ec.fieldContext_Mutation_prise(ctx, field)
 	if err != nil {
@@ -8594,6 +9081,613 @@ func (ec *executionContext) fieldContext_Notification_created_at(_ context.Conte
 		IsResolver: false,
 		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
 			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_uid(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_uid(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.UID, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_uid(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_applicant_uid(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_applicant_uid(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ApplicantUID, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_applicant_uid(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_partner_uid(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_partner_uid(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.PartnerUID, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_partner_uid(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_status(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_status(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Status, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(PartnerApplicationStatus)
+	fc.Result = res
+	return ec.marshalNPartnerApplicationStatus2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationStatus(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_status(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type PartnerApplicationStatus does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_message(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_message(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Message, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_message(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_response(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_response(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Response, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_response(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_created_at(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_created_at(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.CreatedAt, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(int64)
+	fc.Result = res
+	return ec.marshalNInt2int64(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_created_at(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_processed_at(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_processed_at(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ProcessedAt, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*int64)
+	fc.Result = res
+	return ec.marshalOInt2ᚖint64(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_processed_at(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_processed_by(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_processed_by(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.ProcessedBy, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_processed_by(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type String does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_applicant(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_applicant(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Applicant, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*User)
+	fc.Result = res
+	return ec.marshalOUser2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐUser(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_applicant(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_User_uid(ctx, field)
+			case "ref_uid":
+				return ec.fieldContext_User_ref_uid(ctx, field)
+			case "lim_ref_uid":
+				return ec.fieldContext_User_lim_ref_uid(ctx, field)
+			case "email":
+				return ec.fieldContext_User_email(ctx, field)
+			case "nickname":
+				return ec.fieldContext_User_nickname(ctx, field)
+			case "photo_url":
+				return ec.fieldContext_User_photo_url(ctx, field)
+			case "created_at":
+				return ec.fieldContext_User_created_at(ctx, field)
+			case "plans":
+				return ec.fieldContext_User_plans(ctx, field)
+			case "plan":
+				return ec.fieldContext_User_plan(ctx, field)
+			case "role":
+				return ec.fieldContext_User_role(ctx, field)
+			case "config":
+				return ec.fieldContext_User_config(ctx, field)
+			case "tg_id":
+				return ec.fieldContext_User_tg_id(ctx, field)
+			case "tg_username":
+				return ec.fieldContext_User_tg_username(ctx, field)
+			case "balance":
+				return ec.fieldContext_User_balance(ctx, field)
+			case "left":
+				return ec.fieldContext_User_left(ctx, field)
+			case "right":
+				return ec.fieldContext_User_right(ctx, field)
+			case "ranks":
+				return ec.fieldContext_User_ranks(ctx, field)
+			case "rank":
+				return ec.fieldContext_User_rank(ctx, field)
+			case "place":
+				return ec.fieldContext_User_place(ctx, field)
+			case "activity":
+				return ec.fieldContext_User_activity(ctx, field)
+			case "level":
+				return ec.fieldContext_User_level(ctx, field)
+			case "team_count":
+				return ec.fieldContext_User_team_count(ctx, field)
+			case "ton_wallet":
+				return ec.fieldContext_User_ton_wallet(ctx, field)
+			case "unlim_invite":
+				return ec.fieldContext_User_unlim_invite(ctx, field)
+			case "products":
+				return ec.fieldContext_User_products(ctx, field)
+			case "is_premium":
+				return ec.fieldContext_User_is_premium(ctx, field)
+			case "premium_until":
+				return ec.fieldContext_User_premium_until(ctx, field)
+			case "premium_invites":
+				return ec.fieldContext_User_premium_invites(ctx, field)
+			case "premium_multiplier":
+				return ec.fieldContext_User_premium_multiplier(ctx, field)
+			case "is_autofarm":
+				return ec.fieldContext_User_is_autofarm(ctx, field)
+			case "autofarm_until":
+				return ec.fieldContext_User_autofarm_until(ctx, field)
+			case "active_boost":
+				return ec.fieldContext_User_active_boost(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _PartnerApplication_partner(ctx context.Context, field graphql.CollectedField, obj *PartnerApplication) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_PartnerApplication_partner(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Partner, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		return graphql.Null
+	}
+	res := resTmp.(*User)
+	fc.Result = res
+	return ec.marshalOUser2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐUser(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_PartnerApplication_partner(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "PartnerApplication",
+		Field:      field,
+		IsMethod:   false,
+		IsResolver: false,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_User_uid(ctx, field)
+			case "ref_uid":
+				return ec.fieldContext_User_ref_uid(ctx, field)
+			case "lim_ref_uid":
+				return ec.fieldContext_User_lim_ref_uid(ctx, field)
+			case "email":
+				return ec.fieldContext_User_email(ctx, field)
+			case "nickname":
+				return ec.fieldContext_User_nickname(ctx, field)
+			case "photo_url":
+				return ec.fieldContext_User_photo_url(ctx, field)
+			case "created_at":
+				return ec.fieldContext_User_created_at(ctx, field)
+			case "plans":
+				return ec.fieldContext_User_plans(ctx, field)
+			case "plan":
+				return ec.fieldContext_User_plan(ctx, field)
+			case "role":
+				return ec.fieldContext_User_role(ctx, field)
+			case "config":
+				return ec.fieldContext_User_config(ctx, field)
+			case "tg_id":
+				return ec.fieldContext_User_tg_id(ctx, field)
+			case "tg_username":
+				return ec.fieldContext_User_tg_username(ctx, field)
+			case "balance":
+				return ec.fieldContext_User_balance(ctx, field)
+			case "left":
+				return ec.fieldContext_User_left(ctx, field)
+			case "right":
+				return ec.fieldContext_User_right(ctx, field)
+			case "ranks":
+				return ec.fieldContext_User_ranks(ctx, field)
+			case "rank":
+				return ec.fieldContext_User_rank(ctx, field)
+			case "place":
+				return ec.fieldContext_User_place(ctx, field)
+			case "activity":
+				return ec.fieldContext_User_activity(ctx, field)
+			case "level":
+				return ec.fieldContext_User_level(ctx, field)
+			case "team_count":
+				return ec.fieldContext_User_team_count(ctx, field)
+			case "ton_wallet":
+				return ec.fieldContext_User_ton_wallet(ctx, field)
+			case "unlim_invite":
+				return ec.fieldContext_User_unlim_invite(ctx, field)
+			case "products":
+				return ec.fieldContext_User_products(ctx, field)
+			case "is_premium":
+				return ec.fieldContext_User_is_premium(ctx, field)
+			case "premium_until":
+				return ec.fieldContext_User_premium_until(ctx, field)
+			case "premium_invites":
+				return ec.fieldContext_User_premium_invites(ctx, field)
+			case "premium_multiplier":
+				return ec.fieldContext_User_premium_multiplier(ctx, field)
+			case "is_autofarm":
+				return ec.fieldContext_User_is_autofarm(ctx, field)
+			case "autofarm_until":
+				return ec.fieldContext_User_autofarm_until(ctx, field)
+			case "active_boost":
+				return ec.fieldContext_User_active_boost(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type User", field.Name)
 		},
 	}
 	return fc, nil
@@ -10880,6 +11974,332 @@ func (ec *executionContext) fieldContext_Query_notifications(_ context.Context, 
 				return ec.fieldContext_Notification_created_at(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Notification", field.Name)
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Query_partner_applications(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Query_partner_applications(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Query().PartnerApplications(rctx, fc.Args["limit"].(int64), fc.Args["skip"].(int64))
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.([]*PartnerApplication); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be []*server/internal/transport/graphql/generated.PartnerApplication`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.([]*PartnerApplication)
+	fc.Result = res
+	return ec.marshalNPartnerApplication2ᚕᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationᚄ(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Query_partner_applications(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Query",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_PartnerApplication_uid(ctx, field)
+			case "applicant_uid":
+				return ec.fieldContext_PartnerApplication_applicant_uid(ctx, field)
+			case "partner_uid":
+				return ec.fieldContext_PartnerApplication_partner_uid(ctx, field)
+			case "status":
+				return ec.fieldContext_PartnerApplication_status(ctx, field)
+			case "message":
+				return ec.fieldContext_PartnerApplication_message(ctx, field)
+			case "response":
+				return ec.fieldContext_PartnerApplication_response(ctx, field)
+			case "created_at":
+				return ec.fieldContext_PartnerApplication_created_at(ctx, field)
+			case "processed_at":
+				return ec.fieldContext_PartnerApplication_processed_at(ctx, field)
+			case "processed_by":
+				return ec.fieldContext_PartnerApplication_processed_by(ctx, field)
+			case "applicant":
+				return ec.fieldContext_PartnerApplication_applicant(ctx, field)
+			case "partner":
+				return ec.fieldContext_PartnerApplication_partner(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type PartnerApplication", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Query_partner_applications_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Query_my_applications(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Query_my_applications(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Query().MyApplications(rctx, fc.Args["limit"].(int64), fc.Args["skip"].(int64))
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.([]*PartnerApplication); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be []*server/internal/transport/graphql/generated.PartnerApplication`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.([]*PartnerApplication)
+	fc.Result = res
+	return ec.marshalNPartnerApplication2ᚕᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationᚄ(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Query_my_applications(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Query",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			switch field.Name {
+			case "uid":
+				return ec.fieldContext_PartnerApplication_uid(ctx, field)
+			case "applicant_uid":
+				return ec.fieldContext_PartnerApplication_applicant_uid(ctx, field)
+			case "partner_uid":
+				return ec.fieldContext_PartnerApplication_partner_uid(ctx, field)
+			case "status":
+				return ec.fieldContext_PartnerApplication_status(ctx, field)
+			case "message":
+				return ec.fieldContext_PartnerApplication_message(ctx, field)
+			case "response":
+				return ec.fieldContext_PartnerApplication_response(ctx, field)
+			case "created_at":
+				return ec.fieldContext_PartnerApplication_created_at(ctx, field)
+			case "processed_at":
+				return ec.fieldContext_PartnerApplication_processed_at(ctx, field)
+			case "processed_by":
+				return ec.fieldContext_PartnerApplication_processed_by(ctx, field)
+			case "applicant":
+				return ec.fieldContext_PartnerApplication_applicant(ctx, field)
+			case "partner":
+				return ec.fieldContext_PartnerApplication_partner(ctx, field)
+			}
+			return nil, fmt.Errorf("no field named %q was found under type PartnerApplication", field.Name)
+		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Query_my_applications_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Query_partner_applications_count(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Query_partner_applications_count(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Query().PartnerApplicationsCount(rctx)
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.(int64); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be int64`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(int64)
+	fc.Result = res
+	return ec.marshalNInt2int64(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Query_partner_applications_count(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Query",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
+		},
+	}
+	return fc, nil
+}
+
+func (ec *executionContext) _Query_my_applications_count(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Query_my_applications_count(ctx, field)
+	if err != nil {
+		return graphql.Null
+	}
+	ctx = graphql.WithFieldContext(ctx, fc)
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		directive0 := func(rctx context.Context) (interface{}, error) {
+			ctx = rctx // use context from middleware stack in children
+			return ec.resolvers.Query().MyApplicationsCount(rctx)
+		}
+		directive1 := func(ctx context.Context) (interface{}, error) {
+			if ec.directives.HasAuth == nil {
+				return nil, errors.New("directive hasAuth is not implemented")
+			}
+			return ec.directives.HasAuth(ctx, nil, directive0)
+		}
+
+		tmp, err := directive1(rctx)
+		if err != nil {
+			return nil, graphql.ErrorOnPath(ctx, err)
+		}
+		if tmp == nil {
+			return nil, nil
+		}
+		if data, ok := tmp.(int64); ok {
+			return data, nil
+		}
+		return nil, fmt.Errorf(`unexpected type %T from directive, should be int64`, tmp)
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(int64)
+	fc.Result = res
+	return ec.marshalNInt2int64(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) fieldContext_Query_my_applications_count(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+	fc = &graphql.FieldContext{
+		Object:     "Query",
+		Field:      field,
+		IsMethod:   true,
+		IsResolver: true,
+		Child: func(ctx context.Context, field graphql.CollectedField) (*graphql.FieldContext, error) {
+			return nil, errors.New("field of type Int does not have child fields")
 		},
 	}
 	return fc, nil
@@ -19930,6 +21350,81 @@ func (ec *executionContext) unmarshalInputNotify(ctx context.Context, obj interf
 	return it, nil
 }
 
+func (ec *executionContext) unmarshalInputPartnerApplicationReq(ctx context.Context, obj interface{}) (PartnerApplicationReq, error) {
+	var it PartnerApplicationReq
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"partner_uid", "message"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "partner_uid":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("partner_uid"))
+			data, err := ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+			it.PartnerUID = data
+		case "message":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("message"))
+			data, err := ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+			it.Message = data
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputPartnerApplicationResponseReq(ctx context.Context, obj interface{}) (PartnerApplicationResponseReq, error) {
+	var it PartnerApplicationResponseReq
+	asMap := map[string]interface{}{}
+	for k, v := range obj.(map[string]interface{}) {
+		asMap[k] = v
+	}
+
+	fieldsInOrder := [...]string{"application_uid", "status", "response"}
+	for _, k := range fieldsInOrder {
+		v, ok := asMap[k]
+		if !ok {
+			continue
+		}
+		switch k {
+		case "application_uid":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("application_uid"))
+			data, err := ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+			it.ApplicationUID = data
+		case "status":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("status"))
+			data, err := ec.unmarshalNPartnerApplicationStatus2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationStatus(ctx, v)
+			if err != nil {
+				return it, err
+			}
+			it.Status = data
+		case "response":
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("response"))
+			data, err := ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+			it.Response = data
+		}
+	}
+
+	return it, nil
+}
+
 func (ec *executionContext) unmarshalInputPayoutReq(ctx context.Context, obj interface{}) (PayoutReq, error) {
 	var it PayoutReq
 	asMap := map[string]interface{}{}
@@ -20900,6 +22395,20 @@ func (ec *executionContext) _Mutation(ctx context.Context, sel ast.SelectionSet)
 			if out.Values[i] == graphql.Null {
 				out.Invalids++
 			}
+		case "create_partner_application":
+			out.Values[i] = ec.OperationContext.RootResolverMiddleware(innerCtx, func(ctx context.Context) (res graphql.Marshaler) {
+				return ec._Mutation_create_partner_application(ctx, field)
+			})
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "process_partner_application":
+			out.Values[i] = ec.OperationContext.RootResolverMiddleware(innerCtx, func(ctx context.Context) (res graphql.Marshaler) {
+				return ec._Mutation_process_partner_application(ctx, field)
+			})
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
 		case "prise":
 			out.Values[i] = ec.OperationContext.RootResolverMiddleware(innerCtx, func(ctx context.Context) (res graphql.Marshaler) {
 				return ec._Mutation_prise(ctx, field)
@@ -21024,6 +22533,86 @@ func (ec *executionContext) _Notification(ctx context.Context, sel ast.Selection
 			if out.Values[i] == graphql.Null {
 				out.Invalids++
 			}
+		default:
+			panic("unknown field " + strconv.Quote(field.Name))
+		}
+	}
+	out.Dispatch(ctx)
+	if out.Invalids > 0 {
+		return graphql.Null
+	}
+
+	atomic.AddInt32(&ec.deferred, int32(len(deferred)))
+
+	for label, dfs := range deferred {
+		ec.processDeferredGroup(graphql.DeferredGroup{
+			Label:    label,
+			Path:     graphql.GetPath(ctx),
+			FieldSet: dfs,
+			Context:  ctx,
+		})
+	}
+
+	return out
+}
+
+var partnerApplicationImplementors = []string{"PartnerApplication"}
+
+func (ec *executionContext) _PartnerApplication(ctx context.Context, sel ast.SelectionSet, obj *PartnerApplication) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, partnerApplicationImplementors)
+
+	out := graphql.NewFieldSet(fields)
+	deferred := make(map[string]*graphql.FieldSet)
+	for i, field := range fields {
+		switch field.Name {
+		case "__typename":
+			out.Values[i] = graphql.MarshalString("PartnerApplication")
+		case "uid":
+			out.Values[i] = ec._PartnerApplication_uid(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "applicant_uid":
+			out.Values[i] = ec._PartnerApplication_applicant_uid(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "partner_uid":
+			out.Values[i] = ec._PartnerApplication_partner_uid(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "status":
+			out.Values[i] = ec._PartnerApplication_status(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "message":
+			out.Values[i] = ec._PartnerApplication_message(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "response":
+			out.Values[i] = ec._PartnerApplication_response(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "created_at":
+			out.Values[i] = ec._PartnerApplication_created_at(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "processed_at":
+			out.Values[i] = ec._PartnerApplication_processed_at(ctx, field, obj)
+		case "processed_by":
+			out.Values[i] = ec._PartnerApplication_processed_by(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				out.Invalids++
+			}
+		case "applicant":
+			out.Values[i] = ec._PartnerApplication_applicant(ctx, field, obj)
+		case "partner":
+			out.Values[i] = ec._PartnerApplication_partner(ctx, field, obj)
 		default:
 			panic("unknown field " + strconv.Quote(field.Name))
 		}
@@ -21551,6 +23140,94 @@ func (ec *executionContext) _Query(ctx context.Context, sel ast.SelectionSet) gr
 					}
 				}()
 				res = ec._Query_notifications(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&fs.Invalids, 1)
+				}
+				return res
+			}
+
+			rrm := func(ctx context.Context) graphql.Marshaler {
+				return ec.OperationContext.RootResolverMiddleware(ctx,
+					func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
+			}
+
+			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
+		case "partner_applications":
+			field := field
+
+			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._Query_partner_applications(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&fs.Invalids, 1)
+				}
+				return res
+			}
+
+			rrm := func(ctx context.Context) graphql.Marshaler {
+				return ec.OperationContext.RootResolverMiddleware(ctx,
+					func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
+			}
+
+			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
+		case "my_applications":
+			field := field
+
+			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._Query_my_applications(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&fs.Invalids, 1)
+				}
+				return res
+			}
+
+			rrm := func(ctx context.Context) graphql.Marshaler {
+				return ec.OperationContext.RootResolverMiddleware(ctx,
+					func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
+			}
+
+			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
+		case "partner_applications_count":
+			field := field
+
+			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._Query_partner_applications_count(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&fs.Invalids, 1)
+				}
+				return res
+			}
+
+			rrm := func(ctx context.Context) graphql.Marshaler {
+				return ec.OperationContext.RootResolverMiddleware(ctx,
+					func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
+			}
+
+			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return rrm(innerCtx) })
+		case "my_applications_count":
+			field := field
+
+			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
+				defer func() {
+					if r := recover(); r != nil {
+						ec.Error(ctx, ec.Recover(ctx, r))
+					}
+				}()
+				res = ec._Query_my_applications_count(ctx, field)
 				if res == graphql.Null {
 					atomic.AddUint32(&fs.Invalids, 1)
 				}
@@ -23987,6 +25664,84 @@ func (ec *executionContext) marshalNNotification2ᚖserverᚋinternalᚋtranspor
 	return ec._Notification(ctx, sel, v)
 }
 
+func (ec *executionContext) marshalNPartnerApplication2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplication(ctx context.Context, sel ast.SelectionSet, v PartnerApplication) graphql.Marshaler {
+	return ec._PartnerApplication(ctx, sel, &v)
+}
+
+func (ec *executionContext) marshalNPartnerApplication2ᚕᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationᚄ(ctx context.Context, sel ast.SelectionSet, v []*PartnerApplication) graphql.Marshaler {
+	ret := make(graphql.Array, len(v))
+	var wg sync.WaitGroup
+	isLen1 := len(v) == 1
+	if !isLen1 {
+		wg.Add(len(v))
+	}
+	for i := range v {
+		i := i
+		fc := &graphql.FieldContext{
+			Index:  &i,
+			Result: &v[i],
+		}
+		ctx := graphql.WithFieldContext(ctx, fc)
+		f := func(i int) {
+			defer func() {
+				if r := recover(); r != nil {
+					ec.Error(ctx, ec.Recover(ctx, r))
+					ret = nil
+				}
+			}()
+			if !isLen1 {
+				defer wg.Done()
+			}
+			ret[i] = ec.marshalNPartnerApplication2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplication(ctx, sel, v[i])
+		}
+		if isLen1 {
+			f(i)
+		} else {
+			go f(i)
+		}
+
+	}
+	wg.Wait()
+
+	for _, e := range ret {
+		if e == graphql.Null {
+			return graphql.Null
+		}
+	}
+
+	return ret
+}
+
+func (ec *executionContext) marshalNPartnerApplication2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplication(ctx context.Context, sel ast.SelectionSet, v *PartnerApplication) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._PartnerApplication(ctx, sel, v)
+}
+
+func (ec *executionContext) unmarshalNPartnerApplicationReq2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationReq(ctx context.Context, v interface{}) (PartnerApplicationReq, error) {
+	res, err := ec.unmarshalInputPartnerApplicationReq(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) unmarshalNPartnerApplicationResponseReq2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationResponseReq(ctx context.Context, v interface{}) (PartnerApplicationResponseReq, error) {
+	res, err := ec.unmarshalInputPartnerApplicationResponseReq(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) unmarshalNPartnerApplicationStatus2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationStatus(ctx context.Context, v interface{}) (PartnerApplicationStatus, error) {
+	var res PartnerApplicationStatus
+	err := res.UnmarshalGQL(v)
+	return res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalNPartnerApplicationStatus2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPartnerApplicationStatus(ctx context.Context, sel ast.SelectionSet, v PartnerApplicationStatus) graphql.Marshaler {
+	return v
+}
+
 func (ec *executionContext) marshalNPayout2serverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐPayout(ctx context.Context, sel ast.SelectionSet, v Payout) graphql.Marshaler {
 	return ec._Payout(ctx, sel, &v)
 }
@@ -25244,6 +26999,22 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return res
 }
 
+func (ec *executionContext) unmarshalOInt2ᚖint64(ctx context.Context, v interface{}) (*int64, error) {
+	if v == nil {
+		return nil, nil
+	}
+	res, err := graphql.UnmarshalInt64(v)
+	return &res, graphql.ErrorOnPath(ctx, err)
+}
+
+func (ec *executionContext) marshalOInt2ᚖint64(ctx context.Context, sel ast.SelectionSet, v *int64) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	res := graphql.MarshalInt64(*v)
+	return res
+}
+
 func (ec *executionContext) unmarshalOLocales2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐLocales(ctx context.Context, v interface{}) (*Locales, error) {
 	if v == nil {
 		return nil, nil
@@ -25320,6 +27091,13 @@ func (ec *executionContext) marshalOString2ᚖstring(ctx context.Context, sel as
 	}
 	res := graphql.MarshalString(*v)
 	return res
+}
+
+func (ec *executionContext) marshalOUser2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐUser(ctx context.Context, sel ast.SelectionSet, v *User) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._User(ctx, sel, v)
 }
 
 func (ec *executionContext) marshalOUserActivity2ᚖserverᚋinternalᚋtransportᚋgraphqlᚋgeneratedᚐUserActivity(ctx context.Context, sel ast.SelectionSet, v *UserActivity) graphql.Marshaler {

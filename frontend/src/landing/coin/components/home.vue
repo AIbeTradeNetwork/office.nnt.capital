@@ -101,7 +101,7 @@
     () => (loading.value ? 0 : claimData.claim.value.max_period / 10 ** 9) * 1000,
   )
 
-  const getCoinImg = new URL('../assets/coinbril.gif', import.meta.url).href
+  const getCoinImg = new URL('../assets/coin.png', import.meta.url).href
 
   const getCoinTier2TopImg = computed(() => {
     // return new URL('coin/assets/abt_ranks/tier-2/t10.png', import.meta.url).href

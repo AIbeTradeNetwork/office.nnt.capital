@@ -1,0 +1,44 @@
+enum PartnerApplicationStatus {
+    pending
+    approved
+    rejected
+}
+
+type PartnerApplication {
+    uid: String!
+    applicant_uid: String!
+    partner_uid: String!
+    status: PartnerApplicationStatus!
+    message: String!
+    response: String!
+    created_at: Int!
+    processed_at: Int
+    processed_by: String!
+    
+    # Связанные данные (необязательные)
+    applicant: User
+    partner: User
+}
+
+input PartnerApplicationReq {
+    partner_uid: String!
+    message: String!
+}
+
+input PartnerApplicationResponseReq {
+    application_uid: String!
+    status: PartnerApplicationStatus!
+    response: String!
+}
+
+extend type Query {
+    partner_applications(limit: Int!, skip: Int!): [PartnerApplication!]! @hasAuth
+    my_applications(limit: Int!, skip: Int!): [PartnerApplication!]! @hasAuth
+    partner_applications_count: Int! @hasAuth
+    my_applications_count: Int! @hasAuth
+}
+
+extend type Mutation {
+    create_partner_application(input: PartnerApplicationReq!): PartnerApplication! @hasAuth
+    process_partner_application(input: PartnerApplicationResponseReq!): PartnerApplication! @hasAuth
+} 

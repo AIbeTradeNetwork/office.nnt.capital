@@ -109,3 +109,17 @@ services:
     depends_on:
       - cassandra
     entrypoint: ["/bin/sh", "-c", "sleep infinity"]
+
+  partner-applications-processor:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        BUILD_TARGET: partner-processor
+    environment:
+      - LOG_LEVEL=debug
+      - MONGODB_URL=mongodb://user:pass@mongo:27017/aibetrade?authSource=admin&replicaSet=rs0
+      - MONGODB_DATABASE=aibetrade
+    depends_on:
+      - mongo
+    restart: unless-stopped

@@ -84,6 +84,12 @@ const routes: RouteRecordRaw[] = [
     meta: { layout: AppLaout, keepAlive: true },
   },
   {
+    path: '/partner-applications',
+    name: 'PartnerApplications',
+    component: () => import('pages/partner_applications/index.vue'),
+    meta: { layout: AppLaout, keepAlive: true },
+  },
+  {
     path: '/purchases',
     name: 'Purchases',
     component: () => import('pages/purchases/index.vue'),

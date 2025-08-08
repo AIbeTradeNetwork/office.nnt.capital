@@ -151,6 +151,31 @@ type Notify struct {
 	Texts     *InLocale `json:"texts"`
 }
 
+type PartnerApplication struct {
+	UID          string                   `json:"uid"`
+	ApplicantUID string                   `json:"applicant_uid"`
+	PartnerUID   string                   `json:"partner_uid"`
+	Status       PartnerApplicationStatus `json:"status"`
+	Message      string                   `json:"message"`
+	Response     string                   `json:"response"`
+	CreatedAt    int64                    `json:"created_at"`
+	ProcessedAt  *int64                   `json:"processed_at,omitempty"`
+	ProcessedBy  string                   `json:"processed_by"`
+	Applicant    *User                    `json:"applicant,omitempty"`
+	Partner      *User                    `json:"partner,omitempty"`
+}
+
+type PartnerApplicationReq struct {
+	PartnerUID string `json:"partner_uid"`
+	Message    string `json:"message"`
+}
+
+type PartnerApplicationResponseReq struct {
+	ApplicationUID string                   `json:"application_uid"`
+	Status         PartnerApplicationStatus `json:"status"`
+	Response       string                   `json:"response"`
+}
+
 type Payout struct {
 	UID           string `json:"uid"`
 	Amount        int64  `json:"amount"`
@@ -474,6 +499,49 @@ func (e *Locales) UnmarshalGQL(v interface{}) error {
 }
 
 func (e Locales) MarshalGQL(w io.Writer) {
+	fmt.Fprint(w, strconv.Quote(e.String()))
+}
+
+type PartnerApplicationStatus string
+
+const (
+	PartnerApplicationStatusPending  PartnerApplicationStatus = "pending"
+	PartnerApplicationStatusApproved PartnerApplicationStatus = "approved"
+	PartnerApplicationStatusRejected PartnerApplicationStatus = "rejected"
+)
+
+var AllPartnerApplicationStatus = []PartnerApplicationStatus{
+	PartnerApplicationStatusPending,
+	PartnerApplicationStatusApproved,
+	PartnerApplicationStatusRejected,
+}
+
+func (e PartnerApplicationStatus) IsValid() bool {
+	switch e {
+	case PartnerApplicationStatusPending, PartnerApplicationStatusApproved, PartnerApplicationStatusRejected:
+		return true
+	}
+	return false
+}
+
+func (e PartnerApplicationStatus) String() string {
+	return string(e)
+}
+
+func (e *PartnerApplicationStatus) UnmarshalGQL(v interface{}) error {
+	str, ok := v.(string)
+	if !ok {
+		return fmt.Errorf("enums must be strings")
+	}
+
+	*e = PartnerApplicationStatus(str)
+	if !e.IsValid() {
+		return fmt.Errorf("%s is not a valid PartnerApplicationStatus", str)
+	}
+	return nil
+}
+
+func (e PartnerApplicationStatus) MarshalGQL(w io.Writer) {
 	fmt.Fprint(w, strconv.Quote(e.String()))
 }
 

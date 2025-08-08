@@ -87,6 +87,14 @@ type TeamService interface {
 	PartnersGetCountByUserUID(context.Context, string) (int64, error)
 	AddPartner(context.Context, string, string) error
 	RemovePartner(context.Context, string, string) error
+
+	// Partner Application methods
+	CreatePartnerApplication(context.Context, string, *domain.PartnerApplicationReq) (*domain.PartnerApplication, error)
+	ProcessPartnerApplication(context.Context, string, *domain.PartnerApplicationResponseReq) (*domain.PartnerApplication, error)
+	GetPartnerApplications(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	GetMyApplications(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	GetPartnerApplicationsCount(context.Context, string) (int64, error)
+	GetMyApplicationsCount(context.Context, string) (int64, error)
 }
 
 type WebService interface {

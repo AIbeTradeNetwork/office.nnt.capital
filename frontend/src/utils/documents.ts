@@ -8,9 +8,9 @@ const $documentsList = {
     link: computed(() => {
       switch ($i18nGlobal.locale.value) {
         case ELocales.ru_RU:
-          return 'https://drive.google.com/file/d/1dpIF9jTSnOxdvu326kfpdZcKMY4yA9Pd/view'
+          return 'https://drive.google.com/file/d/108waGRyvAtljeP0-L-SmyZlbJws8hDfu/view?usp=drive_link'
         default:
-          return 'https://drive.google.com/file/d/1LxknapO7htIvlZdEtLXImiRbEq6WtBiI/view'
+          return 'https://drive.google.com/file/d/1zRZvBU0WdhFrRlmgcXl6Nr8LTDXR2HF5/view?usp=drive_link'
       }
     }),
   },
@@ -19,9 +19,9 @@ const $documentsList = {
     link: computed(() => {
       switch ($i18nGlobal.locale.value) {
         case ELocales.ru_RU:
-          return 'https://drive.google.com/file/d/1JOqJCJWhz7bQ4z2lWMos-3BE2b8rJKga/view'
+          return 'https://drive.google.com/file/d/1boo3DTtoL-SoTPtax56Xtmz42x71kN1o/view?usp=drive_link'
         default:
-          return 'https://drive.google.com/file/d/1TQVPZcDQkWXJ1Ksb1U49nFdIiuuZ-9vr/view'
+          return 'https://drive.google.com/file/d/1Ujxaig7ayI19fetX-9NifPJgfcF6BHHl/view?usp=drive_link'
       }
     }),
   },
@@ -30,9 +30,9 @@ const $documentsList = {
     link: computed(() => {
       switch ($i18nGlobal.locale.value) {
         case ELocales.ru_RU:
-          return 'https://drive.google.com/file/d/1W86aU9FOgdr2-jbzsHT29GDmIOeyOTrn/view'
+          return 'https://docs.google.com/https://drive.google.com/file/d/1Q1IibX3xBVp1eluANcinmgf7FZWAOppE/view?usp=drive_link'
         default:
-          return 'https://drive.google.com/file/d/1tzYCdxnOJhZoT-P7GOb0rdUIW3jVIRyN/view'
+          return 'https://drive.google.com/file/d/1QTPq7XZofuzP657NvJg_zemO10etd88C/view?usp=drive_link'
       }
     }),
   },
@@ -41,20 +41,20 @@ const $documentsList = {
     link: computed(() => {
       switch ($i18nGlobal.locale.value) {
         case ELocales.ru_RU:
-          return 'https://drive.google.com/file/d/1gCUDKcmpvV6mFUwcKmvamOK3CDy0HEkG/view'
+          return 'https://drive.google.com/file/d/18o8LRfkQhHQvk7jC0duJs311ODW3nsZP/view?usp=drive_link'
         default:
-          return 'https://drive.google.com/file/d/1KCcIaak73BBK9kWdXNTe4ZaYNFnDrx4r/view'
+          return 'https://drive.google.com/file/d/1jBywceNE3pnuGMrIsCQhtLSCTxxZYZrk/view?usp=drive_link'
       }
     }),
   },
   termsOfUseABTFunction: {
-    name: 'Terms of use of the ABT function',
+    name: 'Terms of use',
     link: computed(() => {
       switch ($i18nGlobal.locale.value) {
         case ELocales.ru_RU:
-          return 'https://drive.google.com/file/d/1bbMhEn_kHJv1mZj0953axSaLuLfkSLf4/view'
+          return 'https://drive.google.com/file/d/1ZbRJ3VGyelMf2SMPNWtlaU-ENCucveVq/view?usp=drive_link'
         default:
-          return 'https://drive.google.com/file/d/13S2UhPlQNw4C-4qKN6EdIKblVtFGtdu1/view'
+          return 'https://drive.google.com/file/d/1iwROSCnJvgKfKSFeRkHec0dV35hC9rXD/view?usp=drive_link'
       }
     }),
   },
