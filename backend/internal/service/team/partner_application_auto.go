@@ -176,3 +176,30 @@ func (s *Service) rejectExpiredApplication(ctx context.Context, application *dom
 	log.Printf("Rejected expired application %s: %s", application.UID, reason)
 	return nil
 }
+
+// ProcessExpiredApplicationByUID processes exactly one pending application by its UID.
+// It mirrors the logic used by the cron-like processor, so we can reuse it as a Temporal activity.
+func (s *Service) ProcessExpiredApplicationByUID(ctx context.Context, applicationUID string) error {
+    // Load application
+    application, err := s.db.PartnerApplicationGetByUID(ctx, applicationUID)
+    if err != nil {
+        return err
+    }
+
+    // If already processed, nothing to do (idempotent)
+    if application.Status != domain.PartnerApplicationStatusPending {
+        return nil
+    }
+
+    // Try current partner first
+    canAccept, err := s.canPartnerAcceptApplication(ctx, application.PartnerUID)
+    if err != nil {
+        return err
+    }
+    if canAccept {
+        return s.autoAcceptApplication(ctx, application, application.PartnerUID)
+    }
+
+    // Escalate along sponsor line
+    return s.escalateApplicationUpSponsorLine(ctx, application)
+}

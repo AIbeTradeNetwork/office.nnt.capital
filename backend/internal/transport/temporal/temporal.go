@@ -70,6 +70,13 @@ func Connect(ctx context.Context, namespace string, queue string, version string
 				BuildID: workflow.AutofarmBuildVersion,
 			},
 		})
+  case workflow.PartnerApplicationQueue:
+      err = c.UpdateWorkerBuildIdCompatibility(ctx, &client.UpdateWorkerBuildIdCompatibilityOptions{
+          TaskQueue: workflow.PartnerApplicationQueue,
+          Operation: &client.BuildIDOpAddNewIDInNewDefaultSet{
+              BuildID: workflow.PartnerApplicationBuildVersion,
+          },
+      })
 	}
 
 	if err != nil {

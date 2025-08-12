@@ -111,8 +111,21 @@ type Resolver struct {
 	buy  BuyService
 	team TeamService
 	web  WebService
+    workflow PartnerWorkflowClient
 }
 
 func NewResolver(authService AuthService, userService UserService, buyService BuyService, teamService TeamService, webService WebService) *Resolver {
-	return &Resolver{authService, userService, buyService, teamService, webService}
+    return &Resolver{authService, userService, buyService, teamService, webService, nil}
+}
+
+// PartnerWorkflowClient is a minimal interface for starting/canceling partner application flows
+type PartnerWorkflowClient interface {
+    StartPartnerApplicationFlow(context.Context, string) error
+    CancelPartnerApplicationFlow(context.Context, string) error
+}
+
+// WithWorkflowRepo allows injecting temporal repo into resolver
+func (r *Resolver) WithWorkflowRepo(w PartnerWorkflowClient) *Resolver {
+    r.workflow = w
+    return r
 }

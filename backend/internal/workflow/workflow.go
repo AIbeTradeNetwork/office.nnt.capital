@@ -48,6 +48,8 @@ type TeamService interface {
 	UserPlaceGet(context.Context, *domain.Buy) (*domain.UserPlace, error)
 	PlaceGetRefUpByBuy(context.Context, *domain.Buy) (*domain.UserPlace, error)
 	ChargeCoinRefBonus(context.Context, *domain.Buy) (*domain.Buy, error)
+    // Partner application processing as an activity
+    ProcessExpiredApplicationByUID(context.Context, string) error
 }
 
 type UserService interface {

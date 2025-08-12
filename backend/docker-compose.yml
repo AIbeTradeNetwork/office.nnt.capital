@@ -53,6 +53,9 @@ services:
       - JWT_SECRET=1234567890
       - API_ROLE=disabled
       - WORKER_ROLE=enabled
+      - AUTOFARM_ROLE=disabled
+      - PRODUCT_ROLE=disabled
+      - NOTIFIER_ROLE=disabled
     ports:
       - 8082:8082
     depends_on:

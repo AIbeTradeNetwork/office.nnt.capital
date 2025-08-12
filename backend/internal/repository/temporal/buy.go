@@ -82,3 +82,33 @@ func (mr *Repo) buyEnsureNamespaces(ctx context.Context, nc client.NamespaceClie
 	})
 	return nil
 }
+
+// partner applications namespace and helpers
+func (mr *Repo) partnerApplicationEnsureNamespaces(ctx context.Context, nc client.NamespaceClient) error {
+    _ = nc.Register(ctx, &workflowservice.RegisterNamespaceRequest{
+        Namespace:                        workflow.PartnerApplicationQueue,
+        WorkflowExecutionRetentionPeriod: durationpb.New(90 * 24 * time.Hour),
+    })
+    return nil
+}
+
+// StartPartnerApplicationFlow starts waiting workflow for a partner application UID
+func (mr *Repo) StartPartnerApplicationFlow(ctx context.Context, applicationUID string) error {
+    c := *mr.c
+    options := client.StartWorkflowOptions{
+        ID:                    "partner-application-" + applicationUID,
+        TaskQueue:             workflow.PartnerApplicationQueue,
+        WorkflowIDReusePolicy: enums.WORKFLOW_ID_REUSE_POLICY_REJECT_DUPLICATE,
+    }
+    _, err := c.ExecuteWorkflow(ctx, options, "PartnerApplicationFlow", applicationUID)
+    if err != nil {
+        return domain.NewError(buyErrorSource).SetCode(domain.ErrWorkflow).Add(err)
+    }
+    return nil
+}
+
+// CancelPartnerApplicationFlow cancels the waiting workflow when processed manually
+func (mr *Repo) CancelPartnerApplicationFlow(ctx context.Context, applicationUID string) error {
+    c := *mr.c
+    return c.CancelWorkflow(ctx, "partner-application-"+applicationUID, "")
+}

@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"math/big"
 	"time"
 
 	"server/internal/domain"
@@ -128,7 +129,20 @@ func (s *Service) ProcessPartnerApplication(ctx context.Context, partnerUID stri
 
 		// Получаем место партнёра в бинарной структуре
 		partnerPlace, err := s.db.UserPlaceGetByUserUID(ctx, partnerUID)
-		if err != nil {
+		if err != nil && domain.ErrorIs(err, domain.ErrNoDocuments) {
+			// Если у партнёра нет места, создаём его автоматически (корневой партнёр)
+			partnerPlace = &domain.UserPlace{
+				UserUID:   partnerUID,
+				MatchUID:  "", // Корневой партнёр
+				Row:       big.NewInt(0),
+				Col:       big.NewInt(0),
+				CreatedAt: time.Now().UTC(),
+			}
+			err = s.db.UserPlaceCreate(ctx, partnerPlace)
+			if err != nil {
+				return nil, domain.NewError(teamErrorSource).SetCode(domain.ErrCreate).Add(err)
+			}
+		} else if err != nil {
 			return nil, domain.NewError(teamErrorSource).SetCode(domain.ErrFind).Add(err)
 		}
 

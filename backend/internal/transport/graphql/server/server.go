@@ -95,7 +95,10 @@ func Start() error {
 	//router.Use(middleware.Logger)
 
 	// graphql interface
-	g := generated.Config{Resolvers: resolver.NewResolver(authService, userService, buyService, teamService, webService)}
+    // inject temporal repo into resolver to start/cancel partner application flows
+    res := resolver.NewResolver(authService, userService, buyService, teamService, webService)
+    res = res.WithWorkflowRepo(wfRepo)
+    g := generated.Config{Resolvers: res}
 	g.Directives.HasAuth = hasAuthDirective
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(g))
 	srv.SetErrorPresenter(errorPresenter)
