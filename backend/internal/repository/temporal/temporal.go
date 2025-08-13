@@ -58,6 +58,7 @@ func (mr *Repo) ensureNamespaces(ctx context.Context) error {
 	}
 	defer cn.Close()
 
-	_ = mr.buyEnsureNamespaces(ctx, cn)
+    _ = mr.buyEnsureNamespaces(ctx, cn)
+    _ = mr.partnerApplicationEnsureNamespaces(ctx, cn)
 	return nil
 }

@@ -28,10 +28,15 @@ func Start() error {
 		Key:   cfg.PaymentGatewayKey,
 	})
 
-	worker, err := Connect(ctx, workflow.BuyQueue, workflow.BuyQueue, workflow.BuyBuildVersion)
+    worker, err := Connect(ctx, workflow.BuyQueue, workflow.BuyQueue, workflow.BuyBuildVersion)
 	if err != nil {
 		return domain.NewError(workerErrorSource).SetCode(domain.ErrConnect).Add(err)
 	}
+    // separate worker for partner applications waiting flow (same namespace, different task queue)
+    partnerWorker, err := Connect(ctx, workflow.BuyQueue, workflow.PartnerApplicationQueue, workflow.PartnerApplicationBuildVersion)
+    if err != nil {
+        return domain.NewError(workerErrorSource).SetCode(domain.ErrConnect).Add(err)
+    }
 
 	dbRepo, err := repository.NewDbRepo(ctx)
 	if err != nil {
@@ -47,8 +52,9 @@ func Start() error {
 	authService := auth.NewAuthService(dbRepo, nil)
 	teamService := team.NewTeamService(dbRepo, pbProvider, authService)
 
-	buyWorkflow := workflow.NewBuyWorkflow(buyService, teamService)
-	worker.Register(
+    buyWorkflow := workflow.NewBuyWorkflow(buyService, teamService)
+    partnerApplicationWorkflow := workflow.NewPartnerApplicationWorkflow(teamService)
+    worker.Register(
 		buyWorkflow.BuyFlow,
 		buyService.BuyPay,
 		buyService.InitPaid,
@@ -75,10 +81,16 @@ func Start() error {
 		buyService.Charged,
 	)
 
-	err = worker.Run()
-	if err != nil {
-		return err
-	}
+    // register partner application workflow and its single activity on partner worker
+    partnerWorker.Register(
+        partnerApplicationWorkflow.PartnerApplicationFlow,
+        teamService.ProcessExpiredApplicationByUID,
+    )
 
-	return nil
+    // run partner worker in background and main worker in foreground
+    go func() { _ = partnerWorker.Run() }()
+    if err := worker.Run(); err != nil {
+        return err
+    }
+    return nil
 }

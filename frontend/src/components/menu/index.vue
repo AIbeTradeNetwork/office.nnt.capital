@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
   import { watch } from 'vue'
-  import Logo from 'assets/logos/logo.vue'
+  // import Logo from 'assets/logos/logo.vue'
   import DocumentsList from 'components/documentsList/index.vue'
   import { Router } from 'routes/index'
   import { $screen } from 'utils/screen'
@@ -93,7 +93,7 @@
         class="safearea-t sticky top-0 z-[1] border-b border-white/30 backdrop-blur hover:bg-base-100 hover:bg-opacity-10"
       >
         <a class="flex justify-center h-[69px]" href="/" aria-current="page" aria-label="Logo">
-          <Logo class="h-full" />
+          <img src="/src/assets/logos/logo.png" alt="Logo" class="h-full object-contain" />
         </a>
       </div>
 

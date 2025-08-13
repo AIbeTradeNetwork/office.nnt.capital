@@ -80,6 +80,16 @@ type DbRepository interface {
 	UserPlaceCountByMatchUID(context.Context, string) (int64, error)
 	UserPlaceDelete(context.Context, string) error
 	UserProductGetAllByUserUIDAndProductCategoryAndDate(context.Context, string, string, time.Time) ([]*domain.UserProduct, error)
+
+	// Partner Application methods
+	PartnerApplicationCreate(context.Context, *domain.PartnerApplication) error
+	PartnerApplicationGetByUID(context.Context, string) (*domain.PartnerApplication, error)
+	PartnerApplicationGetAllByPartnerUID(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	PartnerApplicationGetAllByApplicantUID(context.Context, string, int64, int64) ([]*domain.PartnerApplication, error)
+	PartnerApplicationUpdate(context.Context, *domain.PartnerApplication) error
+	PartnerApplicationCountByPartnerUID(context.Context, string) (int64, error)
+	PartnerApplicationCountByApplicantUID(context.Context, string) (int64, error)
+	PartnerApplicationGetExpired(context.Context, time.Duration) ([]*domain.PartnerApplication, error)
 }
 
 type AuthService interface {

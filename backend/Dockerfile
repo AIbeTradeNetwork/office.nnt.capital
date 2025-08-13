@@ -10,8 +10,15 @@ COPY . .
 # Download the Go module dependencies
 RUN go mod download
 
-# Build the Go binary
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/main.go
+# Build argument to specify which component to build
+ARG BUILD_TARGET=main
+
+# Build the Go binary based on BUILD_TARGET
+RUN if [ "$BUILD_TARGET" = "partner-processor" ]; then \
+        CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/partner_applications_processor/main.go; \
+    else \
+        CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/main.go; \
+    fi
 # build for remote debug
 #RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -gcflags="all=-N -l" -o main ./cmd/main.go
 

@@ -3,6 +3,12 @@
 build:
 	go build -o ./build/server ./cmd/server/main.go
 
+build-partner-processor:
+	go build -o ./build/partner-processor ./cmd/partner_applications_processor/main.go
+
+run-partner-processor: build-partner-processor
+	./build/partner-processor
+
 build-prof: build
 	go tool pprof —text ./build/server
 

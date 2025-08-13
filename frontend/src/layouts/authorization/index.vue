@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
   import Background from 'components/background/index.vue'
-  import Logo from 'assets/logos/logo.vue'
+  // import Logo from 'assets/logos/logo.vue'
   import LocaleSelector from 'components/localeSelector/index.vue'
 </script>
 
@@ -19,7 +19,7 @@
     <div class="m-auto pc:min-w-96">
       <router-view v-slot="{ Component }">
         <div class="flex justify-center">
-          <Logo class="h-[100px]" />
+          <img src="/src/assets/logos/logo.png" alt="Logo" class="h-[100px] object-contain" />
         </div>
         <div class="relative -mb-[3.6rem] mr-[.6rem] z-10 flex justify-end">
           <LocaleSelector />

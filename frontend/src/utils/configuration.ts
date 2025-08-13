@@ -13,7 +13,7 @@ const $config = reactive({
   isPROD: import.meta.env.PROD,
   role: ERoles.client,
   currency: ECurrencies.udex,
-  isDevMode: false,
+  isDevMode: true,
   tonAddress: '',
 })
 
