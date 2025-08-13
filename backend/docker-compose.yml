@@ -10,7 +10,7 @@ services:
       - .:/app
     environment:
       - LOG_LEVEL=debug
-      - MONGODB_URL=mongodb://user:pass@mongo:27017/aibetrade?authSource=admin&replicaSet=rs0
+      - MONGODB_URL=mongodb+srv://doadmin:z4B7Gnq126059Roi@NNT-DB-7b2aa5a1.mongo.ondigitalocean.com/aibetrade?tls=true&authSource=admin
       - MONGODB_DATABASE=aibetrade
       - TEMPORAL_URL=temporal:7233
       - HTTP_ADDR=0.0.0.0:8081
@@ -34,7 +34,6 @@ services:
     ports:
       - 8081:8081
     depends_on:
-      - mongo
       - temporal
 
   worker:
@@ -46,7 +45,7 @@ services:
       - .:/app
     environment:
       - LOG_LEVEL=debug
-      - MONGODB_URL=mongodb://user:pass@mongo:27017/aibetrade?authSource=admin&replicaSet=rs0
+      - MONGODB_URL=mongodb+srv://doadmin:z4B7Gnq126059Roi@NNT-DB-7b2aa5a1.mongo.ondigitalocean.com/aibetrade?tls=true&authSource=admin
       - MONGODB_DATABASE=aibetrade
       - TEMPORAL_URL=temporal:7233
       - HTTP_ADDR=:8082
@@ -59,22 +58,21 @@ services:
     ports:
       - 8082:8082
     depends_on:
-      - mongo
       - temporal
 
-  mongo:
-    image: mongo:6
-    container_name: mongo
-    restart: always
-    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017", "--keyFile", "/etc/mongodb/pki/keyfile"]
-    volumes:
-      - ./tmp/data/mongo:/data/db
-      - /home/ubuntu/mongo-keyfile/rs_keyfile:/etc/mongodb/pki/keyfile:ro
-    ports:
-      - 27017:27017
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=user
-      - MONGO_INITDB_ROOT_PASSWORD=pass
+  # mongo:
+  #   image: mongo:6
+  #   container_name: mongo
+  #   restart: always
+  #   command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017", "--keyFile", "/etc/mongodb/pki/keyfile"]
+  #   volumes:
+  #     - ./tmp/data/mongo:/data/db
+  #     - /home/ubuntu/mongo-keyfile/rs_keyfile:/etc/mongodb/pki/keyfile:ro
+  #   ports:
+  #     - 27017:27017
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=user
+  #     - MONGO_INITDB_ROOT_PASSWORD=pass
 
   cassandra:
     container_name: cassandra
@@ -121,8 +119,6 @@ services:
         BUILD_TARGET: partner-processor
     environment:
       - LOG_LEVEL=debug
-      - MONGODB_URL=mongodb://user:pass@mongo:27017/aibetrade?authSource=admin&replicaSet=rs0
+      - MONGODB_URL=mongodb+srv://doadmin:z4B7Gnq126059Roi@NNT-DB-7b2aa5a1.mongo.ondigitalocean.com/aibetrade?tls=true&authSource=admin
       - MONGODB_DATABASE=aibetrade
-    depends_on:
-      - mongo
     restart: unless-stopped
